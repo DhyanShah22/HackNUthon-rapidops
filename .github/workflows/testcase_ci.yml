@@ -22,13 +22,14 @@ jobs:
       - name: 📦 Install Dependencies
         run: |
           pip install -r requirements.txt
+          pip install pytest-html pytest-json-report
 
       - name: 🚀 Run API Tests (Pytest)
         run: |
-          pytest Py-test/ --html=reports/test_report.html --self-contained-html
+          pytest Py-test/ --html=test_reports/report.html --json-report --json-report-file=test_reports/report.json
 
-      - name: 📂 Upload Test Report
+      - name: 📤 Upload Test Reports
         uses: actions/upload-artifact@v4
         with:
-          name: test-report
-          path: reports/test_report.html
+          name: test-reports
+          path: test_reports/
