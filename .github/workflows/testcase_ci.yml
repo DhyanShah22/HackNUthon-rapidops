@@ -26,6 +26,12 @@ jobs:
       - name: 🚀 Run API Test Case Generation
         run: |
           streamlit run GenerateTestCase/app.py --server.headless true & sleep 10
+          while [ ! -f "data/test_cases.json" ]; do
+            echo "Waiting for user to upload file..."
+            sleep 5
+          done
+
+          echo "Test cases generated! Proceeding..."
           curl -X POST http://localhost:8501 # Simulate UI Input
 
     #   - name: 🚀 Run Figma Test Case Generation
