@@ -6,7 +6,7 @@ import json
 with open("GenerateTestCase/data/test_cases.json", "r") as file:
     test_cases = json.load(file)
 
-BASE_URL = "http://localhost:4000"  # Update this if the API runs on a different port
+BASE_URL = "https://hack-n-uthon-6-0.vercel.app/"  # Update this if the API runs on a different port
 
 @pytest.mark.parametrize("test_case", test_cases)
 def test_api(test_case):
