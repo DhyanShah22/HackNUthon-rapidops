@@ -2,55 +2,12 @@ name: TestCase Generation & Automation
 
 on:
   push:
-    branches:
-      - main
-  workflow_dispatch: # Allows manual triggering
+    paths:
+      - "data/test_cases.json"  # Run CI/CD only if this file is changed
+  workflow_dispatch:  # Allow manual trigger
 
 jobs:
-  generate-test-cases:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: 📥 Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: 🛠️ Set Up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.9"
-
-      - name: 📦 Install Dependencies
-        run: |
-          pip install -r requirements.txt
-
-      - name: 🚀 Run API Test Case Generation
-        run: |
-          streamlit run GenerateTestCase/app.py --server.headless true & sleep 10
-          while [ ! -f "data/test_cases.json" ]; do
-            echo "Waiting for user to upload file..."
-            sleep 5
-          done
-
-          echo "Test cases generated! Proceeding..."
-          curl -X POST http://localhost:8501 # Simulate UI Input
-
-    #   - name: 🚀 Run Figma Test Case Generation
-    #     run: |
-    #       streamlit run figma_streamlit_rag/app.py --server.headless true & sleep 10
-    #       curl -X POST http://localhost:8502 # Simulate UI Input
-
-      - name: 🔄 Commit and Push Generated Test Cases
-        run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "actions@github.com"
-          git add data/test_cases.json
-          git commit -m "🔄 Auto-generated test cases"
-          git push origin main
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
-
   run-tests:
-    needs: generate-test-cases
     runs-on: ubuntu-latest
 
     steps:
