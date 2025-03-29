@@ -13,20 +13,8 @@ GEMINI_API_KEY = "AIzaSyB4jbxlU5rFCkRh4GL34vPODGBKCMFF0Ys"
 # Streamlit configuration
 st.set_page_config(page_title="TestCaseGPT 🧪🤖", page_icon="📜")
 
-# Sidebar
-with st.sidebar:
-    st.title("📌 TestCaseGPT 🧪🤖")
-    st.markdown("### **🔍 Features**")
-    st.markdown("- Upload **Requirements PDF** 📄 or **Figma JSON** 📝")
-    st.markdown("- Generate & Save **Test Cases** ⚡")
-    
-    st.markdown("---")
-    st.subheader("⚙️ **Settings**")
-    dark_mode = st.checkbox("🌙 Enable Dark Mode")
-    
-    st.markdown("---")
-    st.info("Developed by **Syntax Error**", icon="💡")
-    st.caption("📌 Version: 1.0.0")
+st.title("TestCaseGPT 🧪🤖")
+st.caption("Upload an API documentation PDF to generate structured test cases!")
 
 # Define Data Directory
 DATA_DIR = "data"
@@ -38,22 +26,14 @@ if not os.path.exists(test_cases_file):
         json.dump([], f)
 
 # File Upload
-st.title("TestCaseGPT 🧪🤖")
-st.caption("Upload a document to generate test cases automatically!")
+uploaded_file = st.file_uploader("Upload a PDF (API Documentation)", type=["pdf"])
 
-uploaded_file = st.file_uploader("Upload a PDF (requirements) or JSON (Figma data)", type=["pdf", "json"])
-
-# Load and Process File
 @st.cache_resource(show_spinner=False)
-def load_data(file_path, file_type):
+def load_data(file_path):
     try:
         with st.spinner("Loading and indexing the document..."):
-            if file_type == "pdf":
-                loader = PyPDFLoader(file_path)
-                documents = loader.load()
-            else:
-                with open(file_path, "r") as f:
-                    documents = [{"page_content": json.load(f)}]
+            loader = PyPDFLoader(file_path)
+            documents = loader.load()
             
             if not documents:
                 st.error("❌ Could not load the document!")
@@ -70,9 +50,10 @@ def load_data(file_path, file_type):
         st.error(f"❌ Error: {str(e)}")
         st.stop()
 
-# Initialize Chat Model and Memory
 chat_model = ChatGoogleGenerativeAI(model="gemini-1.5-pro", google_api_key=GEMINI_API_KEY)
 memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
+
+import re
 
 def generate_test_cases(vector_store):
     retrieval_chain = ConversationalRetrievalChain.from_llm(
@@ -83,70 +64,55 @@ def generate_test_cases(vector_store):
         output_key="answer"
     )
     
-    prompt = "Generate test cases based on the uploaded document."
+    prompt = """Generate structured API test cases in the following JSON format:
+    [
+        {
+            "api_endpoint": "<endpoint>",
+            "method": "<HTTP_METHOD>",
+            "payload": { <request_payload> },
+            "expected_status": <STATUS_CODE>,
+            "expected_response_keys": [<response_keys>]
+        }
+    ]
+    """
     st.info("Generating test cases...")
+
     
     try:
-        response = retrieval_chain.invoke({
-            "question": prompt,
-            "chat_history": []
-        })
-        
-        st.info(f"Raw response: {response}")  # Debugging message
+        response = retrieval_chain.invoke({"question": prompt, "chat_history": []})
         
         if not response or "answer" not in response:
-            st.error("❌ No response received. Check the document content and API integration.")
+            st.error("❌ No response received.")
             return
 
-        answer = response['answer'].strip()
-        
-        if not answer:
-            st.error("❌ Empty response received. Ensure the document has meaningful content.")
-            return
-        
-        import re
+        # Remove markdown code block formatting if present
+        raw_json = response['answer'].strip()
+        raw_json = re.sub(r"^```json\s*", "", raw_json)  # Remove opening ```
+        raw_json = re.sub(r"\s*```$", "", raw_json)  # Remove closing ```
 
-        def extract_test_cases(answer):
-            lines = [line.strip() for line in answer.split("\n") if line.strip()]
-            test_cases = []
-            
-            for line in lines:
-                # Identify test case lines (lines that start with '* ' or contain 'Verify')
-                if re.match(r"^\*\s", line) or "Verify" in line:
-                    test_cases.append(line)
-            
-            return test_cases
+        # Parse JSON
+        test_cases = json.loads(raw_json)
         
-        test_cases = extract_test_cases(answer)
-        
-        if not test_cases:
-            st.error("❌ No test cases found in response.")
-            return
-
-        # Save test cases
-        with open(test_cases_file, "r+") as f:
-            data = json.load(f)
-            data.append({"query": prompt, "test_cases": test_cases})
-            f.seek(0)
-            json.dump(data, f, indent=4)
+        with open(test_cases_file, "w") as f:
+            json.dump(test_cases, f, indent=4)
 
         st.success("✅ Test cases generated and saved successfully!")
-        st.write("### Generated Test Cases:")
-        for idx, tc in enumerate(test_cases, start=1):
-            st.write(f"**Test Case {idx}:** {tc}")
+        st.json(test_cases)
 
+    except json.JSONDecodeError as e:
+        st.error(f"❌ JSON decoding error: {str(e)}")
+        st.text_area("Raw response:", raw_json)
     except Exception as e:
         st.error(f"Error generating test cases: {str(e)}")
         st.exception(e)
 
-# Process the uploaded file
+
 if uploaded_file:
     file_path = os.path.join(DATA_DIR, uploaded_file.name)
     with open(file_path, "wb") as f:
         f.write(uploaded_file.getbuffer())
     
-    file_type = "pdf" if uploaded_file.name.endswith(".pdf") else "json"
-    vector_store = load_data(file_path, file_type)
+    vector_store = load_data(file_path)
     
     if vector_store:
         st.success("✅ Document processed successfully!")

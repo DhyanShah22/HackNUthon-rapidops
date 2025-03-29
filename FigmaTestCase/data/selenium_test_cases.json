@@ -1,0 +1,91 @@
+[
+    {
+        "test_name": "Homepage Load Test",
+        "description": "Verify that the homepage loads successfully.",
+        "steps": [
+            "Navigate to the homepage URL."
+        ],
+        "expected_result": "Homepage should load completely with all elements visible, including the 'FIND CLOTHES THAT MATCHES YOUR STYLE' banner, brand logos, and product previews."
+    },
+    {
+        "test_name": "Homepage Shop Now Button Test",
+        "description": "Verify that the 'Shop Now' button on the homepage navigates to the correct page.",
+        "steps": [
+            "Navigate to the homepage URL.",
+            "Click the 'Shop Now' button."
+        ],
+        "expected_result": "Should navigate to the main shopping/category page."
+    },
+    {
+        "test_name": "Homepage Newsletter Subscription Test",
+        "description": "Verify that the newsletter subscription form works as expected.",
+        "steps": [
+            "Navigate to the homepage URL.",
+            "Enter a valid email address in the 'Enter your email address' field.",
+            "Click the 'Subscribe to Newsletter' button."
+        ],
+        "expected_result": "A success message should appear, confirming the subscription. Alternatively, the email field could be cleared, indicating successful submission."
+    },
+    {
+        "test_name": "Category Page Load Test",
+        "description": "Verify that the category page loads successfully.",
+        "steps": [
+            "Navigate to a category page URL (e.g., 'Casual')."
+        ],
+        "expected_result": "Category page should load with all products visible, filters available, and sorting options functional."
+    },
+    {
+        "test_name": "Category Page Filter Test",
+        "description": "Verify that the filters on the category page work correctly.",
+        "steps": [
+            "Navigate to a category page URL.",
+            "Select a filter (e.g., price range, color, size).",
+            "Click the 'Apply Filter' button."
+        ],
+        "expected_result": "The product list should update to display only the products that match the selected filter criteria."
+    },
+    {
+        "test_name": "Category Page Sorting Test",
+        "description": "Verify that the sorting options on the category page work correctly.",
+        "steps": [
+            "Navigate to a category page URL.",
+            "Select a sorting option (e.g., 'Sort by: Most Popular')."
+        ],
+        "expected_result": "The product list should be reordered according to the selected sorting criteria."
+    },
+    {
+        "test_name": "Product Detail Page Load Test",
+        "description": "Verify that the product detail page loads successfully.",
+        "steps": [
+            "Navigate to a product detail page URL."
+        ],
+        "expected_result": "Product detail page should load completely with product images, description, price, size and color options, 'Add to Cart' button, and customer reviews visible."
+    },
+    {
+        "test_name": "Product Detail Page Add to Cart Test",
+        "description": "Verify that the 'Add to Cart' button on the product detail page functions correctly.",
+        "steps": [
+            "Navigate to a product detail page URL.",
+            "Select a size and color (if applicable).",
+            "Click the 'Add to Cart' button."
+        ],
+        "expected_result": "A success message should appear, confirming that the item has been added to the cart. The cart icon could also update to reflect the added item."
+    },
+    {
+        "test_name": "Cart Page Load Test",
+        "description": "Verify that the cart page loads successfully.",
+        "steps": [
+            "Navigate to the cart page URL."
+        ],
+        "expected_result": "Cart page should load with all added items displayed, along with their details (name, price, quantity), order summary (subtotal, discounts, delivery fee, total), and 'Go to Checkout' button."
+    },
+    {
+        "test_name": "Cart Page Checkout Button Test",
+        "description": "Verify that the 'Go to Checkout' button on the cart page navigates to the checkout page.",
+        "steps": [
+            "Navigate to the cart page URL (ensure there are items in the cart).",
+            "Click the 'Go to Checkout' button."
+        ],
+        "expected_result": "Should navigate to the checkout page."
+    }
+]
