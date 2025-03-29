@@ -3,7 +3,7 @@ name: TestCase Generation & Automation
 on:
   push:
     paths:
-      - "data/test_cases.json"  # Run CI/CD only if this file is changed
+      - "GenerateTestCase/data/test_cases.json"  # Run CI/CD only if this file is changed
   workflow_dispatch:  # Allow manual trigger
 
 jobs:
