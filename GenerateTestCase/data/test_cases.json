@@ -1,0 +1,42 @@
+[
+    {
+        "query": "Generate test cases based on the uploaded document.",
+        "test_cases": [
+            "* **User Authentication:**",
+            "* Verify successful login with valid credentials.",
+            "* Verify login failure with invalid credentials.",
+            "* Verify successful user registration.",
+            "* Verify registration failure with existing username or invalid data.",
+            "* **Dashboard:**",
+            "* Verify that the dashboard loads correctly for logged-in users.",
+            "* Verify that key metrics are displayed accurately.",
+            "* **CRUD Operations:**",
+            "* Verify successful creation, retrieval, update, and deletion of entities (e.g., products, users, orders).",
+            "* **Payment Processing (if applicable):**",
+            "* Verify successful payment transactions.",
+            "* Verify handling of failed payment transactions.",
+            "* **API Integrations:**",
+            "* Verify successful data exchange with integrated APIs.",
+            "* **Authentication & Authorization:**",
+            "* Verify that unauthorized users cannot access protected resources.",
+            "* Verify that users can only access resources they are authorized to.",
+            "* **Load Testing:**",
+            "* Simulate 1000 concurrent users to verify system performance under load.",
+            "* Measure response times and resource utilization.",
+            "* **Stress Testing:**",
+            "* Exceed the expected load to identify the system's breaking point.",
+            "* **User Experience:**",
+            "* Evaluate the ease of use and intuitiveness of the user interface.",
+            "* Gather user feedback on the overall user experience.  This would involve real users performing tasks and providing feedback.",
+            "* **User Registration and Login:**",
+            "* Test Case: User registers with valid data. Expected Outcome: Successful registration and automatic login.",
+            "* Test Case: User attempts to login with incorrect password. Expected Outcome: Error message displayed.",
+            "* **Product Search:**",
+            "* Test Case: User searches for a product using a valid keyword. Expected Outcome: Relevant products are displayed.",
+            "* Test Case: User searches for a product using an invalid keyword. Expected Outcome: \"No results found\" message.",
+            "* **Transaction (If Applicable):**",
+            "* Test Case: User completes a purchase with valid payment information. Expected Outcome: Successful transaction confirmation.",
+            "* Test Case: User attempts to purchase with insufficient funds. Expected Outcome: Transaction declined message."
+        ]
+    }
+]
