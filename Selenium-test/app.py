@@ -20,19 +20,19 @@ BASE_URL = "https://hack-n-uthon-6-0-pu3p.vercel.app/"
 
 @pytest.fixture(scope="module")
 def driver():
-    """Setup and teardown of Selenium WebDriver with headless mode."""
+    """Setup and teardown of Selenium WebDriver."""
     options = Options()
     options.add_argument("--headless")  # Run in headless mode for GitHub Actions
     options.add_argument("--no-sandbox")  
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--disable-gpu")  
-    options.add_argument("--window-size=1920,1080")  
-
+    options.add_argument("--window-size=1920,1080") 
     driver = webdriver.Chrome(options=options)
+    driver.maximize_window()
     yield driver  # Provide driver to tests
     driver.quit()
 
-@pytest.mark.parametrize("test_case_index, test_case", list(enumerate(test_cases)))  # FIX: Correctly enumerate test cases
+@pytest.mark.parametrize("test_case_index, test_case", enumerate(test_cases))
 def test_execute_test_case(driver, test_case_index, test_case):
     """Run each test case from JSON, marking certain ones as passed without execution."""
 
@@ -78,7 +78,7 @@ def test_execute_test_case(driver, test_case_index, test_case):
                 width, height = map(int, target.split("x"))
                 driver.set_window_size(width, height)
 
-            time.sleep(0.5)  # Reduced delay for efficiency
+            time.sleep(1)  # Reduce delay for efficiency
 
         except Exception as e:
             screenshot_path = os.path.join(BASE_DIR, "error_screenshot.png")
