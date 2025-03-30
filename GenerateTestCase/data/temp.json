@@ -3,22 +3,9 @@
         "api_endpoint": "/api/user/signup",
         "method": "POST",
         "payload": {
-            "Email": "testuser1@example.com",
-            "Password": "Password1!",
+            "Email": "user76747@example.com",
+            "Password": "Aq4!fu1lYVKR",
             "Role": "customer"
-        },
-        "expected_status": 200,
-        "expected_response_keys": [
-            "Email",
-            "token"
-        ]
-    },
-    {
-        "api_endpoint": "/api/user/login",
-        "method": "POST",
-        "payload": {
-            "Email": "testuser1@example.com",
-            "Password": "Password1!"
         },
         "expected_status": 200,
         "expected_response_keys": [
@@ -30,8 +17,8 @@
         "api_endpoint": "/api/user/signup",
         "method": "POST",
         "payload": {
-            "Email": "testuser2@example.com",
-            "Password": "Password2@",
+            "Email": "user83697@example.com",
+            "Password": "Sx0$bJhIYzpW",
             "Role": "customer"
         },
         "expected_status": 200,
@@ -44,14 +31,40 @@
         "api_endpoint": "/api/user/login",
         "method": "POST",
         "payload": {
-            "Email": "testuser2@example.com",
-            "Password": "Password2@"
+            "Email": "user92402@example.com",
+            "Password": "Oi9^nfDQxsOk",
+            "Role": "customer"
         },
         "expected_status": 200,
         "expected_response_keys": [
             "Email",
             "token"
         ]
+    },
+    {
+        "api_endpoint": "/api/user/login",
+        "method": "POST",
+        "payload": {
+            "Email": "user19291@example.com",
+            "Password": "Wx5^CaJlHFVm",
+            "Role": "customer"
+        },
+        "expected_status": 200,
+        "expected_response_keys": [
+            "Email",
+            "token"
+        ]
+    },
+    {
+        "api_endpoint": "/metrics",
+        "method": "GET",
+        "payload": {
+            "Email": "user19336@example.com",
+            "Password": "Py5^IK3JqAzJ",
+            "Role": "customer"
+        },
+        "expected_status": 200,
+        "expected_response_keys": []
     },
     {
         "api_endpoint": "/metrics",
