@@ -1,0 +1,74 @@
+name: TestCase Generation & Automation
+
+on:
+  push:
+    paths:
+      - "GenerateTestCase/data/test_cases.json"  # API test case changes trigger API tests
+      - "FigmaTestCase/data/test_cases.json"   # UI test case changes trigger UI tests
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  run-api-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 🛠️ Set Up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: 📦 Install Dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install pytest-html pytest-json-report
+
+      - name: 🚀 Run API Tests (Pytest)
+        run: |
+          if [ -f "GenerateTestCase/data/test_cases.json" ]; then
+            pytest Py-test/ --html=test_reports/api_report.html --json-report --json-report-file=test_reports/api_report.json
+          else
+            echo "⚠️ No API test cases found, skipping API tests."
+          fi
+
+      - name: 📤 Upload API Test Reports
+        if: success() || failure()  # Upload even if tests fail
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-test-reports
+          path: test_reports/
+
+  run-ui-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 🛠️ Set Up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: 🛠️ Install Selenium & WebDriver
+        run: |
+          pip install -r requirements.txt
+          pip install selenium pytest-html pytest-json-report
+          sudo apt-get update
+          sudo apt-get install -y chromium-chromedriver
+          ln -s /usr/bin/chromedriver /usr/local/bin/chromedriver
+
+      - name: 🚀 Run UI Tests (Selenium)
+        run: |
+          if [ -f "FigmaTestCase/data/test_cases.json" ]; then
+            pytest Selenium-test/ --html=test_reports/ui_report.html --json-report --json-report-file=test_reports/ui_report.json
+          else
+            echo "⚠️ No UI test cases found, skipping UI tests."
+          fi
+
+      - name: 📤 Upload UI Test Reports
+        if: success() || failure()  # Upload even if tests fail
+        uses: actions/upload-artifact@v4
+        with:
+          name: ui-test-reports
+          path: test_reports/

@@ -1,0 +1,50 @@
+[
+    {
+        "api_endpoint": "/api/user/signup",
+        "method": "POST",
+        "payload": {
+            "Email": "testuser@example.com",
+            "Password": "StrongPass@123",
+            "Role": "customer"
+        },
+        "expected_status": 200,
+        "expected_response_keys": ["Email", "token"]
+    },
+    {
+        "api_endpoint": "/api/user/login",
+        "method": "POST",
+        "payload": {
+            "Email": "testuser@example.com",
+            "Password": "StrongPass@123"
+        },
+        "expected_status": 200,
+        "expected_response_keys": ["Email", "token"]
+    },
+    {
+        "api_endpoint": "/api/user/login",
+        "method": "POST",
+        "payload": {
+            "Email": "testuser@example.com",
+            "Password": "WrongPass"
+        },
+        "expected_status": 400,
+        "expected_response_keys": ["error"]
+    },
+    {
+        "api_endpoint": "/api/user/signup",
+        "method": "POST",
+        "payload": {
+            "Email": "invalid-email",
+            "Password": "Weak",
+            "Role": "customer"
+        },
+        "expected_status": 400,
+        "expected_response_keys": ["error"]
+    },
+    {
+        "api_endpoint": "/metrics",
+        "method": "GET",
+        "expected_status": 200
+    }
+    
+]
