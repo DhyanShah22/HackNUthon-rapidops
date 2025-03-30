@@ -9,7 +9,7 @@ Selenium-test/app.py ...FFFF.FF                                          [100%]
 =================================== FAILURES ===================================
 _____________________ test_execute_test_case[3-test_case3] _____________________
 
-driver = <selenium.webdriver.chrome.webdriver.WebDriver (session="7273aa355d3281e1bfa3eb9eadb8cda4")>
+driver = <selenium.webdriver.chrome.webdriver.WebDriver (session="015b6447c126632f6d7155c5a486c15e")>
 test_case_index = 3
 test_case = {'description': 'Attempt login with an invalid email format.', 'expected_result': 'Error message is displayed for the ...e': 'invalid_email'}, {'action': 'click', 'target': "[data-testid='Login now']"}], 'test_name': 'Invalid Email Format'}
 
@@ -48,8 +48,8 @@ test_case = {'description': 'Attempt login with an invalid email format.', 'expe
 Selenium-test/app.py:65: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <selenium.webdriver.support.wait.WebDriverWait (session="7273aa355d3281e1bfa3eb9eadb8cda4")>
-method = <function element_to_be_clickable.<locals>._predicate at 0x7f7cf3c67b80>
+self = <selenium.webdriver.support.wait.WebDriverWait (session="015b6447c126632f6d7155c5a486c15e")>
+method = <function element_to_be_clickable.<locals>._predicate at 0x7f31efbffb80>
 message = ''
 
     def until(self, method: Callable[[D], Union[Literal[False], T]], message: str = "") -> T:
@@ -106,32 +106,32 @@ message = ''
 >       raise TimeoutException(message, screen, stacktrace)
 E       selenium.common.exceptions.TimeoutException: Message: 
 E       Stacktrace:
-E       #0 0x556f3b379ffa <unknown>
-E       #1 0x556f3ae38970 <unknown>
-E       #2 0x556f3ae8a385 <unknown>
-E       #3 0x556f3ae8a5b1 <unknown>
-E       #4 0x556f3aed93c4 <unknown>
-E       #5 0x556f3aeb02bd <unknown>
-E       #6 0x556f3aed670c <unknown>
-E       #7 0x556f3aeb0063 <unknown>
-E       #8 0x556f3ae7c328 <unknown>
-E       #9 0x556f3ae7d491 <unknown>
-E       #10 0x556f3b34142b <unknown>
-E       #11 0x556f3b3452ec <unknown>
-E       #12 0x556f3b328a22 <unknown>
-E       #13 0x556f3b345e64 <unknown>
-E       #14 0x556f3b30cbef <unknown>
-E       #15 0x556f3b368558 <unknown>
-E       #16 0x556f3b368736 <unknown>
-E       #17 0x556f3b378e76 <unknown>
-E       #18 0x7f5c7f29caa4 <unknown>
-E       #19 0x7f5c7f329c3c <unknown>
+E       #0 0x559a0aa53ffa <unknown>
+E       #1 0x559a0a512970 <unknown>
+E       #2 0x559a0a564385 <unknown>
+E       #3 0x559a0a5645b1 <unknown>
+E       #4 0x559a0a5b33c4 <unknown>
+E       #5 0x559a0a58a2bd <unknown>
+E       #6 0x559a0a5b070c <unknown>
+E       #7 0x559a0a58a063 <unknown>
+E       #8 0x559a0a556328 <unknown>
+E       #9 0x559a0a557491 <unknown>
+E       #10 0x559a0aa1b42b <unknown>
+E       #11 0x559a0aa1f2ec <unknown>
+E       #12 0x559a0aa02a22 <unknown>
+E       #13 0x559a0aa1fe64 <unknown>
+E       #14 0x559a0a9e6bef <unknown>
+E       #15 0x559a0aa42558 <unknown>
+E       #16 0x559a0aa42736 <unknown>
+E       #17 0x559a0aa52e76 <unknown>
+E       #18 0x7fa0a4e9caa4 <unknown>
+E       #19 0x7fa0a4f29c3c <unknown>
 
 /opt/hostedtoolcache/Python/3.9.21/x64/lib/python3.9/site-packages/selenium/webdriver/support/wait.py:146: TimeoutException
 
 During handling of the above exception, another exception occurred:
 
-driver = <selenium.webdriver.chrome.webdriver.WebDriver (session="7273aa355d3281e1bfa3eb9eadb8cda4")>
+driver = <selenium.webdriver.chrome.webdriver.WebDriver (session="015b6447c126632f6d7155c5a486c15e")>
 test_case_index = 3
 test_case = {'description': 'Attempt login with an invalid email format.', 'expected_result': 'Error message is displayed for the ...e': 'invalid_email'}, {'action': 'click', 'target': "[data-testid='Login now']"}], 'test_name': 'Invalid Email Format'}
 
@@ -189,26 +189,26 @@ test_case = {'description': 'Attempt login with an invalid email format.', 'expe
 >               pytest.fail(f"❌ Error in step '{step}': {e}. Screenshot saved at {screenshot_path}")
 E               Failed: ❌ Error in step '{'action': 'click', 'target': "[data-testid='Login now']"}': Message: 
 E               Stacktrace:
-E               #0 0x556f3b379ffa <unknown>
-E               #1 0x556f3ae38970 <unknown>
-E               #2 0x556f3ae8a385 <unknown>
-E               #3 0x556f3ae8a5b1 <unknown>
-E               #4 0x556f3aed93c4 <unknown>
-E               #5 0x556f3aeb02bd <unknown>
-E               #6 0x556f3aed670c <unknown>
-E               #7 0x556f3aeb0063 <unknown>
-E               #8 0x556f3ae7c328 <unknown>
-E               #9 0x556f3ae7d491 <unknown>
-E               #10 0x556f3b34142b <unknown>
-E               #11 0x556f3b3452ec <unknown>
-E               #12 0x556f3b328a22 <unknown>
-E               #13 0x556f3b345e64 <unknown>
-E               #14 0x556f3b30cbef <unknown>
-E               #15 0x556f3b368558 <unknown>
-E               #16 0x556f3b368736 <unknown>
-E               #17 0x556f3b378e76 <unknown>
-E               #18 0x7f5c7f29caa4 <unknown>
-E               #19 0x7f5c7f329c3c <unknown>
+E               #0 0x559a0aa53ffa <unknown>
+E               #1 0x559a0a512970 <unknown>
+E               #2 0x559a0a564385 <unknown>
+E               #3 0x559a0a5645b1 <unknown>
+E               #4 0x559a0a5b33c4 <unknown>
+E               #5 0x559a0a58a2bd <unknown>
+E               #6 0x559a0a5b070c <unknown>
+E               #7 0x559a0a58a063 <unknown>
+E               #8 0x559a0a556328 <unknown>
+E               #9 0x559a0a557491 <unknown>
+E               #10 0x559a0aa1b42b <unknown>
+E               #11 0x559a0aa1f2ec <unknown>
+E               #12 0x559a0aa02a22 <unknown>
+E               #13 0x559a0aa1fe64 <unknown>
+E               #14 0x559a0a9e6bef <unknown>
+E               #15 0x559a0aa42558 <unknown>
+E               #16 0x559a0aa42736 <unknown>
+E               #17 0x559a0aa52e76 <unknown>
+E               #18 0x7fa0a4e9caa4 <unknown>
+E               #19 0x7fa0a4f29c3c <unknown>
 E               . Screenshot saved at /home/runner/work/HackNUthon-rapidops/HackNUthon-rapidops/Selenium-test/error_screenshot.png
 
 Selenium-test/app.py:86: Failed
@@ -217,7 +217,7 @@ Selenium-test/app.py:86: Failed
 🚀 Executing: Invalid Email Format
 _____________________ test_execute_test_case[4-test_case4] _____________________
 
-driver = <selenium.webdriver.chrome.webdriver.WebDriver (session="7273aa355d3281e1bfa3eb9eadb8cda4")>
+driver = <selenium.webdriver.chrome.webdriver.WebDriver (session="015b6447c126632f6d7155c5a486c15e")>
 test_case_index = 4
 test_case = {'description': 'Verify password visibility toggle functionality.', 'expected_result': "Password field input type chan...cks.", 'steps': [{'action': 'click', 'target': "[data-testid='Icon/eye']"}], 'test_name': 'Password Visibility Toggle'}
 
@@ -256,8 +256,8 @@ test_case = {'description': 'Verify password visibility toggle functionality.', 
 Selenium-test/app.py:65: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <selenium.webdriver.support.wait.WebDriverWait (session="7273aa355d3281e1bfa3eb9eadb8cda4")>
-method = <function element_to_be_clickable.<locals>._predicate at 0x7f7cf3700c10>
+self = <selenium.webdriver.support.wait.WebDriverWait (session="015b6447c126632f6d7155c5a486c15e")>
+method = <function element_to_be_clickable.<locals>._predicate at 0x7f31ef6a5c10>
 message = ''
 
     def until(self, method: Callable[[D], Union[Literal[False], T]], message: str = "") -> T:
@@ -314,32 +314,32 @@ message = ''
 >       raise TimeoutException(message, screen, stacktrace)
 E       selenium.common.exceptions.TimeoutException: Message: 
 E       Stacktrace:
-E       #0 0x556f3b379ffa <unknown>
-E       #1 0x556f3ae38970 <unknown>
-E       #2 0x556f3ae8a385 <unknown>
-E       #3 0x556f3ae8a5b1 <unknown>
-E       #4 0x556f3aed93c4 <unknown>
-E       #5 0x556f3aeb02bd <unknown>
-E       #6 0x556f3aed670c <unknown>
-E       #7 0x556f3aeb0063 <unknown>
-E       #8 0x556f3ae7c328 <unknown>
-E       #9 0x556f3ae7d491 <unknown>
-E       #10 0x556f3b34142b <unknown>
-E       #11 0x556f3b3452ec <unknown>
-E       #12 0x556f3b328a22 <unknown>
-E       #13 0x556f3b345e64 <unknown>
-E       #14 0x556f3b30cbef <unknown>
-E       #15 0x556f3b368558 <unknown>
-E       #16 0x556f3b368736 <unknown>
-E       #17 0x556f3b378e76 <unknown>
-E       #18 0x7f5c7f29caa4 <unknown>
-E       #19 0x7f5c7f329c3c <unknown>
+E       #0 0x559a0aa53ffa <unknown>
+E       #1 0x559a0a512970 <unknown>
+E       #2 0x559a0a564385 <unknown>
+E       #3 0x559a0a5645b1 <unknown>
+E       #4 0x559a0a5b33c4 <unknown>
+E       #5 0x559a0a58a2bd <unknown>
+E       #6 0x559a0a5b070c <unknown>
+E       #7 0x559a0a58a063 <unknown>
+E       #8 0x559a0a556328 <unknown>
+E       #9 0x559a0a557491 <unknown>
+E       #10 0x559a0aa1b42b <unknown>
+E       #11 0x559a0aa1f2ec <unknown>
+E       #12 0x559a0aa02a22 <unknown>
+E       #13 0x559a0aa1fe64 <unknown>
+E       #14 0x559a0a9e6bef <unknown>
+E       #15 0x559a0aa42558 <unknown>
+E       #16 0x559a0aa42736 <unknown>
+E       #17 0x559a0aa52e76 <unknown>
+E       #18 0x7fa0a4e9caa4 <unknown>
+E       #19 0x7fa0a4f29c3c <unknown>
 
 /opt/hostedtoolcache/Python/3.9.21/x64/lib/python3.9/site-packages/selenium/webdriver/support/wait.py:146: TimeoutException
 
 During handling of the above exception, another exception occurred:
 
-driver = <selenium.webdriver.chrome.webdriver.WebDriver (session="7273aa355d3281e1bfa3eb9eadb8cda4")>
+driver = <selenium.webdriver.chrome.webdriver.WebDriver (session="015b6447c126632f6d7155c5a486c15e")>
 test_case_index = 4
 test_case = {'description': 'Verify password visibility toggle functionality.', 'expected_result': "Password field input type chan...cks.", 'steps': [{'action': 'click', 'target': "[data-testid='Icon/eye']"}], 'test_name': 'Password Visibility Toggle'}
 
@@ -397,26 +397,26 @@ test_case = {'description': 'Verify password visibility toggle functionality.', 
 >               pytest.fail(f"❌ Error in step '{step}': {e}. Screenshot saved at {screenshot_path}")
 E               Failed: ❌ Error in step '{'action': 'click', 'target': "[data-testid='Icon/eye']"}': Message: 
 E               Stacktrace:
-E               #0 0x556f3b379ffa <unknown>
-E               #1 0x556f3ae38970 <unknown>
-E               #2 0x556f3ae8a385 <unknown>
-E               #3 0x556f3ae8a5b1 <unknown>
-E               #4 0x556f3aed93c4 <unknown>
-E               #5 0x556f3aeb02bd <unknown>
-E               #6 0x556f3aed670c <unknown>
-E               #7 0x556f3aeb0063 <unknown>
-E               #8 0x556f3ae7c328 <unknown>
-E               #9 0x556f3ae7d491 <unknown>
-E               #10 0x556f3b34142b <unknown>
-E               #11 0x556f3b3452ec <unknown>
-E               #12 0x556f3b328a22 <unknown>
-E               #13 0x556f3b345e64 <unknown>
-E               #14 0x556f3b30cbef <unknown>
-E               #15 0x556f3b368558 <unknown>
-E               #16 0x556f3b368736 <unknown>
-E               #17 0x556f3b378e76 <unknown>
-E               #18 0x7f5c7f29caa4 <unknown>
-E               #19 0x7f5c7f329c3c <unknown>
+E               #0 0x559a0aa53ffa <unknown>
+E               #1 0x559a0a512970 <unknown>
+E               #2 0x559a0a564385 <unknown>
+E               #3 0x559a0a5645b1 <unknown>
+E               #4 0x559a0a5b33c4 <unknown>
+E               #5 0x559a0a58a2bd <unknown>
+E               #6 0x559a0a5b070c <unknown>
+E               #7 0x559a0a58a063 <unknown>
+E               #8 0x559a0a556328 <unknown>
+E               #9 0x559a0a557491 <unknown>
+E               #10 0x559a0aa1b42b <unknown>
+E               #11 0x559a0aa1f2ec <unknown>
+E               #12 0x559a0aa02a22 <unknown>
+E               #13 0x559a0aa1fe64 <unknown>
+E               #14 0x559a0a9e6bef <unknown>
+E               #15 0x559a0aa42558 <unknown>
+E               #16 0x559a0aa42736 <unknown>
+E               #17 0x559a0aa52e76 <unknown>
+E               #18 0x7fa0a4e9caa4 <unknown>
+E               #19 0x7fa0a4f29c3c <unknown>
 E               . Screenshot saved at /home/runner/work/HackNUthon-rapidops/HackNUthon-rapidops/Selenium-test/error_screenshot.png
 
 Selenium-test/app.py:86: Failed
@@ -425,7 +425,7 @@ Selenium-test/app.py:86: Failed
 🚀 Executing: Password Visibility Toggle
 _____________________ test_execute_test_case[5-test_case5] _____________________
 
-driver = <selenium.webdriver.chrome.webdriver.WebDriver (session="7273aa355d3281e1bfa3eb9eadb8cda4")>
+driver = <selenium.webdriver.chrome.webdriver.WebDriver (session="015b6447c126632f6d7155c5a486c15e")>
 test_case_index = 5
 test_case = {'description': 'Navigate to the sign-up page.', 'expected_result': 'Sign-up page is displayed with relevant fields and buttons.', 'steps': [{'action': 'click', 'target': "[data-testid='Sign up']"}], 'test_name': 'Navigate to Sign Up Page'}
 
@@ -464,8 +464,8 @@ test_case = {'description': 'Navigate to the sign-up page.', 'expected_result': 
 Selenium-test/app.py:65: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <selenium.webdriver.support.wait.WebDriverWait (session="7273aa355d3281e1bfa3eb9eadb8cda4")>
-method = <function element_to_be_clickable.<locals>._predicate at 0x7f7cf36b3ee0>
+self = <selenium.webdriver.support.wait.WebDriverWait (session="015b6447c126632f6d7155c5a486c15e")>
+method = <function element_to_be_clickable.<locals>._predicate at 0x7f31ef659ee0>
 message = ''
 
     def until(self, method: Callable[[D], Union[Literal[False], T]], message: str = "") -> T:
@@ -522,32 +522,32 @@ message = ''
 >       raise TimeoutException(message, screen, stacktrace)
 E       selenium.common.exceptions.TimeoutException: Message: 
 E       Stacktrace:
-E       #0 0x556f3b379ffa <unknown>
-E       #1 0x556f3ae38970 <unknown>
-E       #2 0x556f3ae8a385 <unknown>
-E       #3 0x556f3ae8a5b1 <unknown>
-E       #4 0x556f3aed93c4 <unknown>
-E       #5 0x556f3aeb02bd <unknown>
-E       #6 0x556f3aed670c <unknown>
-E       #7 0x556f3aeb0063 <unknown>
-E       #8 0x556f3ae7c328 <unknown>
-E       #9 0x556f3ae7d491 <unknown>
-E       #10 0x556f3b34142b <unknown>
-E       #11 0x556f3b3452ec <unknown>
-E       #12 0x556f3b328a22 <unknown>
-E       #13 0x556f3b345e64 <unknown>
-E       #14 0x556f3b30cbef <unknown>
-E       #15 0x556f3b368558 <unknown>
-E       #16 0x556f3b368736 <unknown>
-E       #17 0x556f3b378e76 <unknown>
-E       #18 0x7f5c7f29caa4 <unknown>
-E       #19 0x7f5c7f329c3c <unknown>
+E       #0 0x559a0aa53ffa <unknown>
+E       #1 0x559a0a512970 <unknown>
+E       #2 0x559a0a564385 <unknown>
+E       #3 0x559a0a5645b1 <unknown>
+E       #4 0x559a0a5b33c4 <unknown>
+E       #5 0x559a0a58a2bd <unknown>
+E       #6 0x559a0a5b070c <unknown>
+E       #7 0x559a0a58a063 <unknown>
+E       #8 0x559a0a556328 <unknown>
+E       #9 0x559a0a557491 <unknown>
+E       #10 0x559a0aa1b42b <unknown>
+E       #11 0x559a0aa1f2ec <unknown>
+E       #12 0x559a0aa02a22 <unknown>
+E       #13 0x559a0aa1fe64 <unknown>
+E       #14 0x559a0a9e6bef <unknown>
+E       #15 0x559a0aa42558 <unknown>
+E       #16 0x559a0aa42736 <unknown>
+E       #17 0x559a0aa52e76 <unknown>
+E       #18 0x7fa0a4e9caa4 <unknown>
+E       #19 0x7fa0a4f29c3c <unknown>
 
 /opt/hostedtoolcache/Python/3.9.21/x64/lib/python3.9/site-packages/selenium/webdriver/support/wait.py:146: TimeoutException
 
 During handling of the above exception, another exception occurred:
 
-driver = <selenium.webdriver.chrome.webdriver.WebDriver (session="7273aa355d3281e1bfa3eb9eadb8cda4")>
+driver = <selenium.webdriver.chrome.webdriver.WebDriver (session="015b6447c126632f6d7155c5a486c15e")>
 test_case_index = 5
 test_case = {'description': 'Navigate to the sign-up page.', 'expected_result': 'Sign-up page is displayed with relevant fields and buttons.', 'steps': [{'action': 'click', 'target': "[data-testid='Sign up']"}], 'test_name': 'Navigate to Sign Up Page'}
 
@@ -605,26 +605,26 @@ test_case = {'description': 'Navigate to the sign-up page.', 'expected_result': 
 >               pytest.fail(f"❌ Error in step '{step}': {e}. Screenshot saved at {screenshot_path}")
 E               Failed: ❌ Error in step '{'action': 'click', 'target': "[data-testid='Sign up']"}': Message: 
 E               Stacktrace:
-E               #0 0x556f3b379ffa <unknown>
-E               #1 0x556f3ae38970 <unknown>
-E               #2 0x556f3ae8a385 <unknown>
-E               #3 0x556f3ae8a5b1 <unknown>
-E               #4 0x556f3aed93c4 <unknown>
-E               #5 0x556f3aeb02bd <unknown>
-E               #6 0x556f3aed670c <unknown>
-E               #7 0x556f3aeb0063 <unknown>
-E               #8 0x556f3ae7c328 <unknown>
-E               #9 0x556f3ae7d491 <unknown>
-E               #10 0x556f3b34142b <unknown>
-E               #11 0x556f3b3452ec <unknown>
-E               #12 0x556f3b328a22 <unknown>
-E               #13 0x556f3b345e64 <unknown>
-E               #14 0x556f3b30cbef <unknown>
-E               #15 0x556f3b368558 <unknown>
-E               #16 0x556f3b368736 <unknown>
-E               #17 0x556f3b378e76 <unknown>
-E               #18 0x7f5c7f29caa4 <unknown>
-E               #19 0x7f5c7f329c3c <unknown>
+E               #0 0x559a0aa53ffa <unknown>
+E               #1 0x559a0a512970 <unknown>
+E               #2 0x559a0a564385 <unknown>
+E               #3 0x559a0a5645b1 <unknown>
+E               #4 0x559a0a5b33c4 <unknown>
+E               #5 0x559a0a58a2bd <unknown>
+E               #6 0x559a0a5b070c <unknown>
+E               #7 0x559a0a58a063 <unknown>
+E               #8 0x559a0a556328 <unknown>
+E               #9 0x559a0a557491 <unknown>
+E               #10 0x559a0aa1b42b <unknown>
+E               #11 0x559a0aa1f2ec <unknown>
+E               #12 0x559a0aa02a22 <unknown>
+E               #13 0x559a0aa1fe64 <unknown>
+E               #14 0x559a0a9e6bef <unknown>
+E               #15 0x559a0aa42558 <unknown>
+E               #16 0x559a0aa42736 <unknown>
+E               #17 0x559a0aa52e76 <unknown>
+E               #18 0x7fa0a4e9caa4 <unknown>
+E               #19 0x7fa0a4f29c3c <unknown>
 E               . Screenshot saved at /home/runner/work/HackNUthon-rapidops/HackNUthon-rapidops/Selenium-test/error_screenshot.png
 
 Selenium-test/app.py:86: Failed
@@ -633,7 +633,7 @@ Selenium-test/app.py:86: Failed
 🚀 Executing: Navigate to Sign Up Page
 _____________________ test_execute_test_case[6-test_case6] _____________________
 
-driver = <selenium.webdriver.chrome.webdriver.WebDriver (session="7273aa355d3281e1bfa3eb9eadb8cda4")>
+driver = <selenium.webdriver.chrome.webdriver.WebDriver (session="015b6447c126632f6d7155c5a486c15e")>
 test_case_index = 6
 test_case = {'description': 'Verify carousel navigation functionality on the homepage.', 'expected_result': 'Carousel slides to th...teps': [{'action': 'click', 'target': "[data-testid='Arrow - Right 3']"}], 'test_name': 'Homepage Carousel Navigation'}
 
@@ -672,8 +672,8 @@ test_case = {'description': 'Verify carousel navigation functionality on the hom
 Selenium-test/app.py:65: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <selenium.webdriver.support.wait.WebDriverWait (session="7273aa355d3281e1bfa3eb9eadb8cda4")>
-method = <function element_to_be_clickable.<locals>._predicate at 0x7f7cf36e1e50>
+self = <selenium.webdriver.support.wait.WebDriverWait (session="015b6447c126632f6d7155c5a486c15e")>
+method = <function element_to_be_clickable.<locals>._predicate at 0x7f31ef684e50>
 message = ''
 
     def until(self, method: Callable[[D], Union[Literal[False], T]], message: str = "") -> T:
@@ -730,32 +730,32 @@ message = ''
 >       raise TimeoutException(message, screen, stacktrace)
 E       selenium.common.exceptions.TimeoutException: Message: 
 E       Stacktrace:
-E       #0 0x556f3b379ffa <unknown>
-E       #1 0x556f3ae38970 <unknown>
-E       #2 0x556f3ae8a385 <unknown>
-E       #3 0x556f3ae8a5b1 <unknown>
-E       #4 0x556f3aed93c4 <unknown>
-E       #5 0x556f3aeb02bd <unknown>
-E       #6 0x556f3aed670c <unknown>
-E       #7 0x556f3aeb0063 <unknown>
-E       #8 0x556f3ae7c328 <unknown>
-E       #9 0x556f3ae7d491 <unknown>
-E       #10 0x556f3b34142b <unknown>
-E       #11 0x556f3b3452ec <unknown>
-E       #12 0x556f3b328a22 <unknown>
-E       #13 0x556f3b345e64 <unknown>
-E       #14 0x556f3b30cbef <unknown>
-E       #15 0x556f3b368558 <unknown>
-E       #16 0x556f3b368736 <unknown>
-E       #17 0x556f3b378e76 <unknown>
-E       #18 0x7f5c7f29caa4 <unknown>
-E       #19 0x7f5c7f329c3c <unknown>
+E       #0 0x559a0aa53ffa <unknown>
+E       #1 0x559a0a512970 <unknown>
+E       #2 0x559a0a564385 <unknown>
+E       #3 0x559a0a5645b1 <unknown>
+E       #4 0x559a0a5b33c4 <unknown>
+E       #5 0x559a0a58a2bd <unknown>
+E       #6 0x559a0a5b070c <unknown>
+E       #7 0x559a0a58a063 <unknown>
+E       #8 0x559a0a556328 <unknown>
+E       #9 0x559a0a557491 <unknown>
+E       #10 0x559a0aa1b42b <unknown>
+E       #11 0x559a0aa1f2ec <unknown>
+E       #12 0x559a0aa02a22 <unknown>
+E       #13 0x559a0aa1fe64 <unknown>
+E       #14 0x559a0a9e6bef <unknown>
+E       #15 0x559a0aa42558 <unknown>
+E       #16 0x559a0aa42736 <unknown>
+E       #17 0x559a0aa52e76 <unknown>
+E       #18 0x7fa0a4e9caa4 <unknown>
+E       #19 0x7fa0a4f29c3c <unknown>
 
 /opt/hostedtoolcache/Python/3.9.21/x64/lib/python3.9/site-packages/selenium/webdriver/support/wait.py:146: TimeoutException
 
 During handling of the above exception, another exception occurred:
 
-driver = <selenium.webdriver.chrome.webdriver.WebDriver (session="7273aa355d3281e1bfa3eb9eadb8cda4")>
+driver = <selenium.webdriver.chrome.webdriver.WebDriver (session="015b6447c126632f6d7155c5a486c15e")>
 test_case_index = 6
 test_case = {'description': 'Verify carousel navigation functionality on the homepage.', 'expected_result': 'Carousel slides to th...teps': [{'action': 'click', 'target': "[data-testid='Arrow - Right 3']"}], 'test_name': 'Homepage Carousel Navigation'}
 
@@ -813,26 +813,26 @@ test_case = {'description': 'Verify carousel navigation functionality on the hom
 >               pytest.fail(f"❌ Error in step '{step}': {e}. Screenshot saved at {screenshot_path}")
 E               Failed: ❌ Error in step '{'action': 'click', 'target': "[data-testid='Arrow - Right 3']"}': Message: 
 E               Stacktrace:
-E               #0 0x556f3b379ffa <unknown>
-E               #1 0x556f3ae38970 <unknown>
-E               #2 0x556f3ae8a385 <unknown>
-E               #3 0x556f3ae8a5b1 <unknown>
-E               #4 0x556f3aed93c4 <unknown>
-E               #5 0x556f3aeb02bd <unknown>
-E               #6 0x556f3aed670c <unknown>
-E               #7 0x556f3aeb0063 <unknown>
-E               #8 0x556f3ae7c328 <unknown>
-E               #9 0x556f3ae7d491 <unknown>
-E               #10 0x556f3b34142b <unknown>
-E               #11 0x556f3b3452ec <unknown>
-E               #12 0x556f3b328a22 <unknown>
-E               #13 0x556f3b345e64 <unknown>
-E               #14 0x556f3b30cbef <unknown>
-E               #15 0x556f3b368558 <unknown>
-E               #16 0x556f3b368736 <unknown>
-E               #17 0x556f3b378e76 <unknown>
-E               #18 0x7f5c7f29caa4 <unknown>
-E               #19 0x7f5c7f329c3c <unknown>
+E               #0 0x559a0aa53ffa <unknown>
+E               #1 0x559a0a512970 <unknown>
+E               #2 0x559a0a564385 <unknown>
+E               #3 0x559a0a5645b1 <unknown>
+E               #4 0x559a0a5b33c4 <unknown>
+E               #5 0x559a0a58a2bd <unknown>
+E               #6 0x559a0a5b070c <unknown>
+E               #7 0x559a0a58a063 <unknown>
+E               #8 0x559a0a556328 <unknown>
+E               #9 0x559a0a557491 <unknown>
+E               #10 0x559a0aa1b42b <unknown>
+E               #11 0x559a0aa1f2ec <unknown>
+E               #12 0x559a0aa02a22 <unknown>
+E               #13 0x559a0aa1fe64 <unknown>
+E               #14 0x559a0a9e6bef <unknown>
+E               #15 0x559a0aa42558 <unknown>
+E               #16 0x559a0aa42736 <unknown>
+E               #17 0x559a0aa52e76 <unknown>
+E               #18 0x7fa0a4e9caa4 <unknown>
+E               #19 0x7fa0a4f29c3c <unknown>
 E               . Screenshot saved at /home/runner/work/HackNUthon-rapidops/HackNUthon-rapidops/Selenium-test/error_screenshot.png
 
 Selenium-test/app.py:86: Failed
@@ -841,7 +841,7 @@ Selenium-test/app.py:86: Failed
 🚀 Executing: Homepage Carousel Navigation
 _____________________ test_execute_test_case[8-test_case8] _____________________
 
-driver = <selenium.webdriver.chrome.webdriver.WebDriver (session="7273aa355d3281e1bfa3eb9eadb8cda4")>
+driver = <selenium.webdriver.chrome.webdriver.WebDriver (session="015b6447c126632f6d7155c5a486c15e")>
 test_case_index = 8
 test_case = {'description': 'Verify category navigation functionality on the homepage.', 'expected_result': 'Navigates to the groc....', 'steps': [{'action': 'click', 'target': "[data-testid='Groceries']"}], 'test_name': 'Homepage Category Navigation'}
 
@@ -880,8 +880,8 @@ test_case = {'description': 'Verify category navigation functionality on the hom
 Selenium-test/app.py:65: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <selenium.webdriver.support.wait.WebDriverWait (session="7273aa355d3281e1bfa3eb9eadb8cda4")>
-method = <function element_to_be_clickable.<locals>._predicate at 0x7f7cf36e1f70>
+self = <selenium.webdriver.support.wait.WebDriverWait (session="015b6447c126632f6d7155c5a486c15e")>
+method = <function element_to_be_clickable.<locals>._predicate at 0x7f31ef684f70>
 message = ''
 
     def until(self, method: Callable[[D], Union[Literal[False], T]], message: str = "") -> T:
@@ -938,32 +938,32 @@ message = ''
 >       raise TimeoutException(message, screen, stacktrace)
 E       selenium.common.exceptions.TimeoutException: Message: 
 E       Stacktrace:
-E       #0 0x556f3b379ffa <unknown>
-E       #1 0x556f3ae38970 <unknown>
-E       #2 0x556f3ae8a385 <unknown>
-E       #3 0x556f3ae8a5b1 <unknown>
-E       #4 0x556f3aed93c4 <unknown>
-E       #5 0x556f3aeb02bd <unknown>
-E       #6 0x556f3aed670c <unknown>
-E       #7 0x556f3aeb0063 <unknown>
-E       #8 0x556f3ae7c328 <unknown>
-E       #9 0x556f3ae7d491 <unknown>
-E       #10 0x556f3b34142b <unknown>
-E       #11 0x556f3b3452ec <unknown>
-E       #12 0x556f3b328a22 <unknown>
-E       #13 0x556f3b345e64 <unknown>
-E       #14 0x556f3b30cbef <unknown>
-E       #15 0x556f3b368558 <unknown>
-E       #16 0x556f3b368736 <unknown>
-E       #17 0x556f3b378e76 <unknown>
-E       #18 0x7f5c7f29caa4 <unknown>
-E       #19 0x7f5c7f329c3c <unknown>
+E       #0 0x559a0aa53ffa <unknown>
+E       #1 0x559a0a512970 <unknown>
+E       #2 0x559a0a564385 <unknown>
+E       #3 0x559a0a5645b1 <unknown>
+E       #4 0x559a0a5b33c4 <unknown>
+E       #5 0x559a0a58a2bd <unknown>
+E       #6 0x559a0a5b070c <unknown>
+E       #7 0x559a0a58a063 <unknown>
+E       #8 0x559a0a556328 <unknown>
+E       #9 0x559a0a557491 <unknown>
+E       #10 0x559a0aa1b42b <unknown>
+E       #11 0x559a0aa1f2ec <unknown>
+E       #12 0x559a0aa02a22 <unknown>
+E       #13 0x559a0aa1fe64 <unknown>
+E       #14 0x559a0a9e6bef <unknown>
+E       #15 0x559a0aa42558 <unknown>
+E       #16 0x559a0aa42736 <unknown>
+E       #17 0x559a0aa52e76 <unknown>
+E       #18 0x7fa0a4e9caa4 <unknown>
+E       #19 0x7fa0a4f29c3c <unknown>
 
 /opt/hostedtoolcache/Python/3.9.21/x64/lib/python3.9/site-packages/selenium/webdriver/support/wait.py:146: TimeoutException
 
 During handling of the above exception, another exception occurred:
 
-driver = <selenium.webdriver.chrome.webdriver.WebDriver (session="7273aa355d3281e1bfa3eb9eadb8cda4")>
+driver = <selenium.webdriver.chrome.webdriver.WebDriver (session="015b6447c126632f6d7155c5a486c15e")>
 test_case_index = 8
 test_case = {'description': 'Verify category navigation functionality on the homepage.', 'expected_result': 'Navigates to the groc....', 'steps': [{'action': 'click', 'target': "[data-testid='Groceries']"}], 'test_name': 'Homepage Category Navigation'}
 
@@ -1021,26 +1021,26 @@ test_case = {'description': 'Verify category navigation functionality on the hom
 >               pytest.fail(f"❌ Error in step '{step}': {e}. Screenshot saved at {screenshot_path}")
 E               Failed: ❌ Error in step '{'action': 'click', 'target': "[data-testid='Groceries']"}': Message: 
 E               Stacktrace:
-E               #0 0x556f3b379ffa <unknown>
-E               #1 0x556f3ae38970 <unknown>
-E               #2 0x556f3ae8a385 <unknown>
-E               #3 0x556f3ae8a5b1 <unknown>
-E               #4 0x556f3aed93c4 <unknown>
-E               #5 0x556f3aeb02bd <unknown>
-E               #6 0x556f3aed670c <unknown>
-E               #7 0x556f3aeb0063 <unknown>
-E               #8 0x556f3ae7c328 <unknown>
-E               #9 0x556f3ae7d491 <unknown>
-E               #10 0x556f3b34142b <unknown>
-E               #11 0x556f3b3452ec <unknown>
-E               #12 0x556f3b328a22 <unknown>
-E               #13 0x556f3b345e64 <unknown>
-E               #14 0x556f3b30cbef <unknown>
-E               #15 0x556f3b368558 <unknown>
-E               #16 0x556f3b368736 <unknown>
-E               #17 0x556f3b378e76 <unknown>
-E               #18 0x7f5c7f29caa4 <unknown>
-E               #19 0x7f5c7f329c3c <unknown>
+E               #0 0x559a0aa53ffa <unknown>
+E               #1 0x559a0a512970 <unknown>
+E               #2 0x559a0a564385 <unknown>
+E               #3 0x559a0a5645b1 <unknown>
+E               #4 0x559a0a5b33c4 <unknown>
+E               #5 0x559a0a58a2bd <unknown>
+E               #6 0x559a0a5b070c <unknown>
+E               #7 0x559a0a58a063 <unknown>
+E               #8 0x559a0a556328 <unknown>
+E               #9 0x559a0a557491 <unknown>
+E               #10 0x559a0aa1b42b <unknown>
+E               #11 0x559a0aa1f2ec <unknown>
+E               #12 0x559a0aa02a22 <unknown>
+E               #13 0x559a0aa1fe64 <unknown>
+E               #14 0x559a0a9e6bef <unknown>
+E               #15 0x559a0aa42558 <unknown>
+E               #16 0x559a0aa42736 <unknown>
+E               #17 0x559a0aa52e76 <unknown>
+E               #18 0x7fa0a4e9caa4 <unknown>
+E               #19 0x7fa0a4f29c3c <unknown>
 E               . Screenshot saved at /home/runner/work/HackNUthon-rapidops/HackNUthon-rapidops/Selenium-test/error_screenshot.png
 
 Selenium-test/app.py:86: Failed
@@ -1049,7 +1049,7 @@ Selenium-test/app.py:86: Failed
 🚀 Executing: Homepage Category Navigation
 _____________________ test_execute_test_case[9-test_case9] _____________________
 
-driver = <selenium.webdriver.chrome.webdriver.WebDriver (session="7273aa355d3281e1bfa3eb9eadb8cda4")>
+driver = <selenium.webdriver.chrome.webdriver.WebDriver (session="015b6447c126632f6d7155c5a486c15e")>
 test_case_index = 9
 test_case = {'description': "Verify the 'View All' button functionality on product sections.", 'expected_result': 'Navigates to th...: [{'action': 'click', 'target': "[data-testid='View All']"}], 'test_name': "Homepage 'View All' Button Functionality"}
 
@@ -1088,8 +1088,8 @@ test_case = {'description': "Verify the 'View All' button functionality on produ
 Selenium-test/app.py:65: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <selenium.webdriver.support.wait.WebDriverWait (session="7273aa355d3281e1bfa3eb9eadb8cda4")>
-method = <function element_to_be_clickable.<locals>._predicate at 0x7f7cf368eb80>
+self = <selenium.webdriver.support.wait.WebDriverWait (session="015b6447c126632f6d7155c5a486c15e")>
+method = <function element_to_be_clickable.<locals>._predicate at 0x7f31ef641b80>
 message = ''
 
     def until(self, method: Callable[[D], Union[Literal[False], T]], message: str = "") -> T:
@@ -1146,32 +1146,32 @@ message = ''
 >       raise TimeoutException(message, screen, stacktrace)
 E       selenium.common.exceptions.TimeoutException: Message: 
 E       Stacktrace:
-E       #0 0x556f3b379ffa <unknown>
-E       #1 0x556f3ae38970 <unknown>
-E       #2 0x556f3ae8a385 <unknown>
-E       #3 0x556f3ae8a5b1 <unknown>
-E       #4 0x556f3aed93c4 <unknown>
-E       #5 0x556f3aeb02bd <unknown>
-E       #6 0x556f3aed670c <unknown>
-E       #7 0x556f3aeb0063 <unknown>
-E       #8 0x556f3ae7c328 <unknown>
-E       #9 0x556f3ae7d491 <unknown>
-E       #10 0x556f3b34142b <unknown>
-E       #11 0x556f3b3452ec <unknown>
-E       #12 0x556f3b328a22 <unknown>
-E       #13 0x556f3b345e64 <unknown>
-E       #14 0x556f3b30cbef <unknown>
-E       #15 0x556f3b368558 <unknown>
-E       #16 0x556f3b368736 <unknown>
-E       #17 0x556f3b378e76 <unknown>
-E       #18 0x7f5c7f29caa4 <unknown>
-E       #19 0x7f5c7f329c3c <unknown>
+E       #0 0x559a0aa53ffa <unknown>
+E       #1 0x559a0a512970 <unknown>
+E       #2 0x559a0a564385 <unknown>
+E       #3 0x559a0a5645b1 <unknown>
+E       #4 0x559a0a5b33c4 <unknown>
+E       #5 0x559a0a58a2bd <unknown>
+E       #6 0x559a0a5b070c <unknown>
+E       #7 0x559a0a58a063 <unknown>
+E       #8 0x559a0a556328 <unknown>
+E       #9 0x559a0a557491 <unknown>
+E       #10 0x559a0aa1b42b <unknown>
+E       #11 0x559a0aa1f2ec <unknown>
+E       #12 0x559a0aa02a22 <unknown>
+E       #13 0x559a0aa1fe64 <unknown>
+E       #14 0x559a0a9e6bef <unknown>
+E       #15 0x559a0aa42558 <unknown>
+E       #16 0x559a0aa42736 <unknown>
+E       #17 0x559a0aa52e76 <unknown>
+E       #18 0x7fa0a4e9caa4 <unknown>
+E       #19 0x7fa0a4f29c3c <unknown>
 
 /opt/hostedtoolcache/Python/3.9.21/x64/lib/python3.9/site-packages/selenium/webdriver/support/wait.py:146: TimeoutException
 
 During handling of the above exception, another exception occurred:
 
-driver = <selenium.webdriver.chrome.webdriver.WebDriver (session="7273aa355d3281e1bfa3eb9eadb8cda4")>
+driver = <selenium.webdriver.chrome.webdriver.WebDriver (session="015b6447c126632f6d7155c5a486c15e")>
 test_case_index = 9
 test_case = {'description': "Verify the 'View All' button functionality on product sections.", 'expected_result': 'Navigates to th...: [{'action': 'click', 'target': "[data-testid='View All']"}], 'test_name': "Homepage 'View All' Button Functionality"}
 
@@ -1229,26 +1229,26 @@ test_case = {'description': "Verify the 'View All' button functionality on produ
 >               pytest.fail(f"❌ Error in step '{step}': {e}. Screenshot saved at {screenshot_path}")
 E               Failed: ❌ Error in step '{'action': 'click', 'target': "[data-testid='View All']"}': Message: 
 E               Stacktrace:
-E               #0 0x556f3b379ffa <unknown>
-E               #1 0x556f3ae38970 <unknown>
-E               #2 0x556f3ae8a385 <unknown>
-E               #3 0x556f3ae8a5b1 <unknown>
-E               #4 0x556f3aed93c4 <unknown>
-E               #5 0x556f3aeb02bd <unknown>
-E               #6 0x556f3aed670c <unknown>
-E               #7 0x556f3aeb0063 <unknown>
-E               #8 0x556f3ae7c328 <unknown>
-E               #9 0x556f3ae7d491 <unknown>
-E               #10 0x556f3b34142b <unknown>
-E               #11 0x556f3b3452ec <unknown>
-E               #12 0x556f3b328a22 <unknown>
-E               #13 0x556f3b345e64 <unknown>
-E               #14 0x556f3b30cbef <unknown>
-E               #15 0x556f3b368558 <unknown>
-E               #16 0x556f3b368736 <unknown>
-E               #17 0x556f3b378e76 <unknown>
-E               #18 0x7f5c7f29caa4 <unknown>
-E               #19 0x7f5c7f329c3c <unknown>
+E               #0 0x559a0aa53ffa <unknown>
+E               #1 0x559a0a512970 <unknown>
+E               #2 0x559a0a564385 <unknown>
+E               #3 0x559a0a5645b1 <unknown>
+E               #4 0x559a0a5b33c4 <unknown>
+E               #5 0x559a0a58a2bd <unknown>
+E               #6 0x559a0a5b070c <unknown>
+E               #7 0x559a0a58a063 <unknown>
+E               #8 0x559a0a556328 <unknown>
+E               #9 0x559a0a557491 <unknown>
+E               #10 0x559a0aa1b42b <unknown>
+E               #11 0x559a0aa1f2ec <unknown>
+E               #12 0x559a0aa02a22 <unknown>
+E               #13 0x559a0aa1fe64 <unknown>
+E               #14 0x559a0a9e6bef <unknown>
+E               #15 0x559a0aa42558 <unknown>
+E               #16 0x559a0aa42736 <unknown>
+E               #17 0x559a0aa52e76 <unknown>
+E               #18 0x7fa0a4e9caa4 <unknown>
+E               #19 0x7fa0a4f29c3c <unknown>
 E               . Screenshot saved at /home/runner/work/HackNUthon-rapidops/HackNUthon-rapidops/Selenium-test/error_screenshot.png
 
 Selenium-test/app.py:86: Failed
@@ -1261,140 +1261,140 @@ report saved to: logs/ui_report.json
 =========================== short test summary info ============================
 FAILED Selenium-test/app.py::test_execute_test_case[3-test_case3] - Failed: ❌ Error in step '{'action': 'click', 'target': "[data-testid='Login now']"}': Message: 
 Stacktrace:
-#0 0x556f3b379ffa <unknown>
-#1 0x556f3ae38970 <unknown>
-#2 0x556f3ae8a385 <unknown>
-#3 0x556f3ae8a5b1 <unknown>
-#4 0x556f3aed93c4 <unknown>
-#5 0x556f3aeb02bd <unknown>
-#6 0x556f3aed670c <unknown>
-#7 0x556f3aeb0063 <unknown>
-#8 0x556f3ae7c328 <unknown>
-#9 0x556f3ae7d491 <unknown>
-#10 0x556f3b34142b <unknown>
-#11 0x556f3b3452ec <unknown>
-#12 0x556f3b328a22 <unknown>
-#13 0x556f3b345e64 <unknown>
-#14 0x556f3b30cbef <unknown>
-#15 0x556f3b368558 <unknown>
-#16 0x556f3b368736 <unknown>
-#17 0x556f3b378e76 <unknown>
-#18 0x7f5c7f29caa4 <unknown>
-#19 0x7f5c7f329c3c <unknown>
+#0 0x559a0aa53ffa <unknown>
+#1 0x559a0a512970 <unknown>
+#2 0x559a0a564385 <unknown>
+#3 0x559a0a5645b1 <unknown>
+#4 0x559a0a5b33c4 <unknown>
+#5 0x559a0a58a2bd <unknown>
+#6 0x559a0a5b070c <unknown>
+#7 0x559a0a58a063 <unknown>
+#8 0x559a0a556328 <unknown>
+#9 0x559a0a557491 <unknown>
+#10 0x559a0aa1b42b <unknown>
+#11 0x559a0aa1f2ec <unknown>
+#12 0x559a0aa02a22 <unknown>
+#13 0x559a0aa1fe64 <unknown>
+#14 0x559a0a9e6bef <unknown>
+#15 0x559a0aa42558 <unknown>
+#16 0x559a0aa42736 <unknown>
+#17 0x559a0aa52e76 <unknown>
+#18 0x7fa0a4e9caa4 <unknown>
+#19 0x7fa0a4f29c3c <unknown>
 . Screenshot saved at /home/runner/work/HackNUthon-rapidops/HackNUthon-rapidops/Selenium-test/error_screenshot.png
 FAILED Selenium-test/app.py::test_execute_test_case[4-test_case4] - Failed: ❌ Error in step '{'action': 'click', 'target': "[data-testid='Icon/eye']"}': Message: 
 Stacktrace:
-#0 0x556f3b379ffa <unknown>
-#1 0x556f3ae38970 <unknown>
-#2 0x556f3ae8a385 <unknown>
-#3 0x556f3ae8a5b1 <unknown>
-#4 0x556f3aed93c4 <unknown>
-#5 0x556f3aeb02bd <unknown>
-#6 0x556f3aed670c <unknown>
-#7 0x556f3aeb0063 <unknown>
-#8 0x556f3ae7c328 <unknown>
-#9 0x556f3ae7d491 <unknown>
-#10 0x556f3b34142b <unknown>
-#11 0x556f3b3452ec <unknown>
-#12 0x556f3b328a22 <unknown>
-#13 0x556f3b345e64 <unknown>
-#14 0x556f3b30cbef <unknown>
-#15 0x556f3b368558 <unknown>
-#16 0x556f3b368736 <unknown>
-#17 0x556f3b378e76 <unknown>
-#18 0x7f5c7f29caa4 <unknown>
-#19 0x7f5c7f329c3c <unknown>
+#0 0x559a0aa53ffa <unknown>
+#1 0x559a0a512970 <unknown>
+#2 0x559a0a564385 <unknown>
+#3 0x559a0a5645b1 <unknown>
+#4 0x559a0a5b33c4 <unknown>
+#5 0x559a0a58a2bd <unknown>
+#6 0x559a0a5b070c <unknown>
+#7 0x559a0a58a063 <unknown>
+#8 0x559a0a556328 <unknown>
+#9 0x559a0a557491 <unknown>
+#10 0x559a0aa1b42b <unknown>
+#11 0x559a0aa1f2ec <unknown>
+#12 0x559a0aa02a22 <unknown>
+#13 0x559a0aa1fe64 <unknown>
+#14 0x559a0a9e6bef <unknown>
+#15 0x559a0aa42558 <unknown>
+#16 0x559a0aa42736 <unknown>
+#17 0x559a0aa52e76 <unknown>
+#18 0x7fa0a4e9caa4 <unknown>
+#19 0x7fa0a4f29c3c <unknown>
 . Screenshot saved at /home/runner/work/HackNUthon-rapidops/HackNUthon-rapidops/Selenium-test/error_screenshot.png
 FAILED Selenium-test/app.py::test_execute_test_case[5-test_case5] - Failed: ❌ Error in step '{'action': 'click', 'target': "[data-testid='Sign up']"}': Message: 
 Stacktrace:
-#0 0x556f3b379ffa <unknown>
-#1 0x556f3ae38970 <unknown>
-#2 0x556f3ae8a385 <unknown>
-#3 0x556f3ae8a5b1 <unknown>
-#4 0x556f3aed93c4 <unknown>
-#5 0x556f3aeb02bd <unknown>
-#6 0x556f3aed670c <unknown>
-#7 0x556f3aeb0063 <unknown>
-#8 0x556f3ae7c328 <unknown>
-#9 0x556f3ae7d491 <unknown>
-#10 0x556f3b34142b <unknown>
-#11 0x556f3b3452ec <unknown>
-#12 0x556f3b328a22 <unknown>
-#13 0x556f3b345e64 <unknown>
-#14 0x556f3b30cbef <unknown>
-#15 0x556f3b368558 <unknown>
-#16 0x556f3b368736 <unknown>
-#17 0x556f3b378e76 <unknown>
-#18 0x7f5c7f29caa4 <unknown>
-#19 0x7f5c7f329c3c <unknown>
+#0 0x559a0aa53ffa <unknown>
+#1 0x559a0a512970 <unknown>
+#2 0x559a0a564385 <unknown>
+#3 0x559a0a5645b1 <unknown>
+#4 0x559a0a5b33c4 <unknown>
+#5 0x559a0a58a2bd <unknown>
+#6 0x559a0a5b070c <unknown>
+#7 0x559a0a58a063 <unknown>
+#8 0x559a0a556328 <unknown>
+#9 0x559a0a557491 <unknown>
+#10 0x559a0aa1b42b <unknown>
+#11 0x559a0aa1f2ec <unknown>
+#12 0x559a0aa02a22 <unknown>
+#13 0x559a0aa1fe64 <unknown>
+#14 0x559a0a9e6bef <unknown>
+#15 0x559a0aa42558 <unknown>
+#16 0x559a0aa42736 <unknown>
+#17 0x559a0aa52e76 <unknown>
+#18 0x7fa0a4e9caa4 <unknown>
+#19 0x7fa0a4f29c3c <unknown>
 . Screenshot saved at /home/runner/work/HackNUthon-rapidops/HackNUthon-rapidops/Selenium-test/error_screenshot.png
 FAILED Selenium-test/app.py::test_execute_test_case[6-test_case6] - Failed: ❌ Error in step '{'action': 'click', 'target': "[data-testid='Arrow - Right 3']"}': Message: 
 Stacktrace:
-#0 0x556f3b379ffa <unknown>
-#1 0x556f3ae38970 <unknown>
-#2 0x556f3ae8a385 <unknown>
-#3 0x556f3ae8a5b1 <unknown>
-#4 0x556f3aed93c4 <unknown>
-#5 0x556f3aeb02bd <unknown>
-#6 0x556f3aed670c <unknown>
-#7 0x556f3aeb0063 <unknown>
-#8 0x556f3ae7c328 <unknown>
-#9 0x556f3ae7d491 <unknown>
-#10 0x556f3b34142b <unknown>
-#11 0x556f3b3452ec <unknown>
-#12 0x556f3b328a22 <unknown>
-#13 0x556f3b345e64 <unknown>
-#14 0x556f3b30cbef <unknown>
-#15 0x556f3b368558 <unknown>
-#16 0x556f3b368736 <unknown>
-#17 0x556f3b378e76 <unknown>
-#18 0x7f5c7f29caa4 <unknown>
-#19 0x7f5c7f329c3c <unknown>
+#0 0x559a0aa53ffa <unknown>
+#1 0x559a0a512970 <unknown>
+#2 0x559a0a564385 <unknown>
+#3 0x559a0a5645b1 <unknown>
+#4 0x559a0a5b33c4 <unknown>
+#5 0x559a0a58a2bd <unknown>
+#6 0x559a0a5b070c <unknown>
+#7 0x559a0a58a063 <unknown>
+#8 0x559a0a556328 <unknown>
+#9 0x559a0a557491 <unknown>
+#10 0x559a0aa1b42b <unknown>
+#11 0x559a0aa1f2ec <unknown>
+#12 0x559a0aa02a22 <unknown>
+#13 0x559a0aa1fe64 <unknown>
+#14 0x559a0a9e6bef <unknown>
+#15 0x559a0aa42558 <unknown>
+#16 0x559a0aa42736 <unknown>
+#17 0x559a0aa52e76 <unknown>
+#18 0x7fa0a4e9caa4 <unknown>
+#19 0x7fa0a4f29c3c <unknown>
 . Screenshot saved at /home/runner/work/HackNUthon-rapidops/HackNUthon-rapidops/Selenium-test/error_screenshot.png
 FAILED Selenium-test/app.py::test_execute_test_case[8-test_case8] - Failed: ❌ Error in step '{'action': 'click', 'target': "[data-testid='Groceries']"}': Message: 
 Stacktrace:
-#0 0x556f3b379ffa <unknown>
-#1 0x556f3ae38970 <unknown>
-#2 0x556f3ae8a385 <unknown>
-#3 0x556f3ae8a5b1 <unknown>
-#4 0x556f3aed93c4 <unknown>
-#5 0x556f3aeb02bd <unknown>
-#6 0x556f3aed670c <unknown>
-#7 0x556f3aeb0063 <unknown>
-#8 0x556f3ae7c328 <unknown>
-#9 0x556f3ae7d491 <unknown>
-#10 0x556f3b34142b <unknown>
-#11 0x556f3b3452ec <unknown>
-#12 0x556f3b328a22 <unknown>
-#13 0x556f3b345e64 <unknown>
-#14 0x556f3b30cbef <unknown>
-#15 0x556f3b368558 <unknown>
-#16 0x556f3b368736 <unknown>
-#17 0x556f3b378e76 <unknown>
-#18 0x7f5c7f29caa4 <unknown>
-#19 0x7f5c7f329c3c <unknown>
+#0 0x559a0aa53ffa <unknown>
+#1 0x559a0a512970 <unknown>
+#2 0x559a0a564385 <unknown>
+#3 0x559a0a5645b1 <unknown>
+#4 0x559a0a5b33c4 <unknown>
+#5 0x559a0a58a2bd <unknown>
+#6 0x559a0a5b070c <unknown>
+#7 0x559a0a58a063 <unknown>
+#8 0x559a0a556328 <unknown>
+#9 0x559a0a557491 <unknown>
+#10 0x559a0aa1b42b <unknown>
+#11 0x559a0aa1f2ec <unknown>
+#12 0x559a0aa02a22 <unknown>
+#13 0x559a0aa1fe64 <unknown>
+#14 0x559a0a9e6bef <unknown>
+#15 0x559a0aa42558 <unknown>
+#16 0x559a0aa42736 <unknown>
+#17 0x559a0aa52e76 <unknown>
+#18 0x7fa0a4e9caa4 <unknown>
+#19 0x7fa0a4f29c3c <unknown>
 . Screenshot saved at /home/runner/work/HackNUthon-rapidops/HackNUthon-rapidops/Selenium-test/error_screenshot.png
 FAILED Selenium-test/app.py::test_execute_test_case[9-test_case9] - Failed: ❌ Error in step '{'action': 'click', 'target': "[data-testid='View All']"}': Message: 
 Stacktrace:
-#0 0x556f3b379ffa <unknown>
-#1 0x556f3ae38970 <unknown>
-#2 0x556f3ae8a385 <unknown>
-#3 0x556f3ae8a5b1 <unknown>
-#4 0x556f3aed93c4 <unknown>
-#5 0x556f3aeb02bd <unknown>
-#6 0x556f3aed670c <unknown>
-#7 0x556f3aeb0063 <unknown>
-#8 0x556f3ae7c328 <unknown>
-#9 0x556f3ae7d491 <unknown>
-#10 0x556f3b34142b <unknown>
-#11 0x556f3b3452ec <unknown>
-#12 0x556f3b328a22 <unknown>
-#13 0x556f3b345e64 <unknown>
-#14 0x556f3b30cbef <unknown>
-#15 0x556f3b368558 <unknown>
-#16 0x556f3b368736 <unknown>
-#17 0x556f3b378e76 <unknown>
-#18 0x7f5c7f29caa4 <unknown>
-#19 0x7f5c7f329c3c <unknown>
+#0 0x559a0aa53ffa <unknown>
+#1 0x559a0a512970 <unknown>
+#2 0x559a0a564385 <unknown>
+#3 0x559a0a5645b1 <unknown>
+#4 0x559a0a5b33c4 <unknown>
+#5 0x559a0a58a2bd <unknown>
+#6 0x559a0a5b070c <unknown>
+#7 0x559a0a58a063 <unknown>
+#8 0x559a0a556328 <unknown>
+#9 0x559a0a557491 <unknown>
+#10 0x559a0aa1b42b <unknown>
+#11 0x559a0aa1f2ec <unknown>
+#12 0x559a0aa02a22 <unknown>
+#13 0x559a0aa1fe64 <unknown>
+#14 0x559a0a9e6bef <unknown>
+#15 0x559a0aa42558 <unknown>
+#16 0x559a0aa42736 <unknown>
+#17 0x559a0aa52e76 <unknown>
+#18 0x7fa0a4e9caa4 <unknown>
+#19 0x7fa0a4f29c3c <unknown>
 . Screenshot saved at /home/runner/work/HackNUthon-rapidops/HackNUthon-rapidops/Selenium-test/error_screenshot.png
-=================== 6 failed, 4 passed in 101.58s (0:01:41) ====================
+==================== 6 failed, 4 passed in 97.86s (0:01:37) ====================
