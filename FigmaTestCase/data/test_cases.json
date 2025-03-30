@@ -1,20 +1,20 @@
 [
     {
-        "test_name": "Login Page UI Elements Visibility",
-        "description": "Verify visibility of UI elements on the login page.",
+        "test_name": "Login Page UI Elements Validation",
+        "description": "Verify the visibility of UI elements on the login page.",
         "steps": [],
-        "expected_result": "Email, Password, Login now button, Forgot? link, Don't have an account? link, and BALA logo are visible."
+        "expected_result": "Email, Password, Login Now button, Forgot? link, Sign Up link, and logo are visible."
     },
     {
         "test_name": "Empty Login Form Submission",
-        "description": "Verify form validation with empty fields.",
+        "description": "Verify form validation with empty email and password fields.",
         "steps": [
             {
                 "action": "click",
                 "target": "TEXT:Login now"
             }
         ],
-        "expected_result": "Error messages for empty Email and Password fields are displayed."
+        "expected_result": "Appropriate error messages are displayed for empty email and password fields."
     },
     {
         "test_name": "Invalid Email Format",
@@ -30,69 +30,64 @@
                 "target": "TEXT:Login now"
             }
         ],
-        "expected_result": "Error message for invalid email format is displayed."
+        "expected_result": "An error message is displayed indicating the invalid email format."
     },
     {
         "test_name": "Navigate to Sign Up Page",
-        "description": "Verify navigation to the sign-up page.",
+        "description": "Verify navigation to the Sign Up page.",
         "steps": [
             {
                 "action": "click",
                 "target": "TEXT:Sign up"
             }
         ],
-        "expected_result": "Sign-up page is displayed with relevant elements (e.g., Email, Password, Login now button)."
+        "expected_result": "Sign Up page is loaded with relevant UI elements."
     },
     {
-        "test_name": "Sign Up Page UI Elements Visibility",
-        "description": "Verify visibility of UI elements on the sign-up page.",
+        "test_name": "Sign Up Page UI Elements Validation",
+        "description": "Verify the visibility of UI elements on the Sign Up page.",
         "steps": [],
-        "expected_result": "Email, Password, Login now button, Already have an account? link, and BALA logo are visible."
+        "expected_result": "Email, Password, Login Now button, Login link, and logo are visible."
     },
     {
-        "test_name": "Home Page UI Elements Visibility",
-        "description": "Verify visibility of key elements on the home page.",
+        "test_name": "Homepage UI Elements Validation",
+        "description": "Verify the visibility of UI elements on the homepage after navigating from login.",
         "steps": [
             {
                 "action": "navigate",
-                "target": "/home"
+                "target": "FRAME:Home Page"
             }
         ],
-        "expected_result": "Search bar, category menu, product listings, and MegaMart logo are visible."
+        "expected_result": "Search bar, categories, deals, and navigation elements are visible."
     },
     {
         "test_name": "Search Functionality",
-        "description": "Verify basic search functionality.",
+        "description": "Verify the search bar functionality.",
         "steps": [
             {
                 "action": "sendKeys",
                 "target": "TEXT:Search essentials, groceries and more...",
-                "value": "test"
-            },
-            {
-                "action": "sendKeys",
-                "target": "TEXT:Search essentials, groceries and more...",
-                "value": "\n"
+                "value": "test search"
             }
         ],
-        "expected_result": "Search results related to 'test' are displayed, or a 'no results' message is shown."
+        "expected_result": "Search results or suggestions are displayed based on the entered text."
     },
     {
         "test_name": "Category Navigation",
-        "description": "Verify navigation through product categories.",
+        "description": "Verify navigation through different categories.",
         "steps": [
             {
                 "action": "click",
                 "target": "TEXT:Groceries"
             }
         ],
-        "expected_result": "Products related to the 'Groceries' category are displayed."
+        "expected_result": "Products or subcategories related to Groceries are displayed."
     },
     {
-        "test_name": "Login Button CSS",
-        "description": "Verify the Login button CSS properties.",
+        "test_name": "CSS Rendering - Login Button Color",
+        "description": "Verify the color of the Login Now button.",
         "steps": [],
-        "expected_result": "Login button has the correct background color, font size, and padding."
+        "expected_result": "Login Now button displays the correct color as per design specifications (e.g., #FF0000)."
     },
     {
         "test_name": "Responsive Design - Mobile View",
@@ -100,9 +95,9 @@
         "steps": [
             {
                 "action": "resizeWindow",
-                "target": "400x800"
+                "target": "375x812"
             }
         ],
-        "expected_result": "UI elements adapt correctly to the smaller screen size without overlapping or clipping."
+        "expected_result": "UI elements adapt correctly to the mobile screen size without overlapping or display issues."
     }
 ]
