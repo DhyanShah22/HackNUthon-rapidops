@@ -1,108 +1,129 @@
 [
     {
-        "test_name": "Login Page UI Elements Visibility",
-        "description": "Verify visibility of UI elements on the login page.",
+        "test_name": "Login Form Visibility",
+        "description": "Verify login form elements are visible.",
         "steps": [],
-        "expected_result": "Email, Password, Login now button, Forgot? link, Don't have an account? link, and BALA logo are visible."
+        "expected_result": "Email, Password, Login now button, and 'Don't have an account?' text are visible."
     },
     {
-        "test_name": "Login Button Disabled State",
-        "description": "Verify the login button is disabled when fields are empty.",
-        "steps": [],
-        "expected_result": "Login now button is disabled."
-    },
-    {
-        "test_name": "Email Field Validation",
-        "description": "Verify email field validation.",
+        "test_name": "Empty Login Attempt",
+        "description": "Attempt login with empty email and password.",
         "steps": [
             {
-                "action": "type",
-                "target": "[data-testid='email-input']",
+                "action": "click",
+                "target": "[data-testid='Login now']"
+            }
+        ],
+        "expected_result": "Error message or validation highlighting empty fields."
+    },
+    {
+        "test_name": "Invalid Email Format",
+        "description": "Attempt login with invalid email format.",
+        "steps": [
+            {
+                "action": "sendKeys",
+                "target": "[data-testid='Email']",
                 "value": "invalid-email"
             },
             {
-                "action": "blur",
-                "target": "[data-testid='email-input']"
+                "action": "click",
+                "target": "[data-testid='Login now']"
             }
         ],
-        "expected_result": "An error message is displayed indicating invalid email format."
+        "expected_result": "Error message indicating invalid email format."
     },
     {
-        "test_name": "Password Field Validation",
-        "description": "Verify password field validation.",
+        "test_name": "Password Visibility Toggle",
+        "description": "Test password visibility toggle functionality.",
         "steps": [
             {
-                "action": "type",
-                "target": "[data-testid='password-input']",
-                "value": "short"
+                "action": "click",
+                "target": "[data-testid='Icon/eye']"
+            }
+        ],
+        "expected_result": "Password field type toggles between 'password' and 'text'."
+    },
+    {
+        "test_name": "Signup Link Navigation",
+        "description": "Navigate to signup page from login page.",
+        "steps": [
+            {
+                "action": "click",
+                "target": "[data-testid='Sign up']"
+            }
+        ],
+        "expected_result": "Signup form is displayed with relevant fields."
+    },
+    {
+        "test_name": "Home Page Navigation from Login",
+        "description": "Simulate successful login and check home page navigation.",
+        "steps": [
+            {
+                "action": "sendKeys",
+                "target": "[data-testid='Email']",
+                "value": "test@example.com"
             },
             {
-                "action": "blur",
-                "target": "[data-testid='password-input']"
-            }
-        ],
-        "expected_result": "An error message might be displayed indicating password length requirements (if any)."
-    },
-    {
-        "test_name": "Forgot Password Link Navigation",
-        "description": "Verify navigation to the forgot password page.",
-        "steps": [
+                "action": "sendKeys",
+                "target": "[data-testid='Password']",
+                "value": "password"
+            },
             {
                 "action": "click",
-                "target": "[data-testid='forgot-password-link']"
+                "target": "[data-testid='Login now']"
             }
         ],
-        "expected_result": "The forgot password page or modal is displayed."
-    },
-    {
-        "test_name": "Sign Up Link Navigation",
-        "description": "Verify navigation to the sign-up page.",
-        "steps": [
-            {
-                "action": "click",
-                "target": "[data-testid='sign-up-link']"
-            }
-        ],
-        "expected_result": "The sign-up page is displayed."
-    },
-    {
-        "test_name": "Homepage Carousel Navigation",
-        "description": "Verify navigation through the homepage carousel.",
-        "steps": [
-            {
-                "action": "click",
-                "target": "[data-testid='carousel-next-button']"
-            }
-        ],
-        "expected_result": "The carousel advances to the next slide."
-    },
-    {
-        "test_name": "Product Card Details",
-        "description": "Verify product card details are displayed.",
-        "steps": [],
-        "expected_result": "Product image, name, price, and discount are visible on each product card."
-    },
-    {
-        "test_name": "View All Products Link",
-        "description": "Verify the View All products link navigation.",
-        "steps": [
-            {
-                "action": "click",
-                "target": "[data-testid='view-all-products-link']"
-            }
-        ],
-        "expected_result": "The all products page is displayed."
+        "expected_result": "Home page elements like search bar, categories, and product listings are visible. (Assuming successful login navigates to home page)"
     },
     {
         "test_name": "Search Bar Functionality",
-        "description": "Verify the search bar allows input.",
+        "description": "Test search bar interaction.",
         "steps": [
             {
-                "action": "type",
-                "target": "[data-testid='search-input']",
+                "action": "sendKeys",
+                "target": "[data-testid='Search essentials, groceries and more...']",
                 "value": "test search"
+            },
+            {
+                "action": "sendKeys",
+                "target": "[data-testid='Search essentials, groceries and more...']",
+                "value": "{ENTER}"
             }
         ],
-        "expected_result": "The search input field displays the entered text."
+        "expected_result": "Search results or suggestions related to 'test search' are displayed."
+    },
+    {
+        "test_name": "Category Navigation",
+        "description": "Test navigation through product categories.",
+        "steps": [
+            {
+                "action": "click",
+                "target": "[data-testid='Groceries']"
+            }
+        ],
+        "expected_result": "Products related to the 'Groceries' category are displayed."
+    },
+    {
+        "test_name": "Product Card Visibility",
+        "description": "Verify product card elements are visible.",
+        "steps": [],
+        "expected_result": "Product image, name, price, and discount information are visible on product cards."
+    },
+    {
+        "test_name": "Login Button Styling",
+        "description": "Check the styling of the login button.",
+        "steps": [],
+        "expected_result": "Login button has correct background color, font size, and padding."
+    },
+    {
+        "test_name": "Responsive Design - Mobile View",
+        "description": "Check responsiveness on mobile view.",
+        "steps": [
+            {
+                "action": "resizeWindow",
+                "target": "375, 812"
+            }
+        ],
+        "expected_result": "UI elements adapt correctly to mobile screen size, no overlapping or clipping."
     }
 ]
