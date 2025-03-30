@@ -97,9 +97,11 @@ jobs:
           path: logs/
 
       - name: 🚀 Commit & Push Logs
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git add logs/
-          git commit -m "📜 Updated test logs [CI/CD]"
-          git push
+          git commit -m "📜 Updated test logs [CI/CD]" || echo "No changes to commit"
+          git push https://$GH_PAT@github.com/DhyanShah22/HackNUthon-rapidops.git main
