@@ -3,73 +3,34 @@
         "api_endpoint": "/api/user/signup",
         "method": "POST",
         "payload": {
-            "Email": "user58535@example.com",
-            "Password": "Xj0%VjH97iis",
-            "Role": "customer"
-        },
-        "expected_status": 200,
-        "expected_response_keys": [
-            "Email",
-            "token"
-        ]
-    },
-    {
-        "api_endpoint": "/api/user/signup",
-        "method": "POST",
-        "payload": {
-            "Email": "user10265@example.com",
-            "Password": "Ga5%gvOeDYbT",
-            "Role": "customer"
-        },
-        "expected_status": 200,
-        "expected_response_keys": [
-            "Email",
-            "token"
-        ]
-    },
-    {
-        "api_endpoint": "/api/user/login",
-        "method": "POST",
-        "payload": {
-            "Email": "user21062@example.com",
-            "Password": "Kz1%gsIHU9s8",
-            "Role": "customer"
-        },
-        "expected_status": 200,
-        "expected_response_keys": [
-            "Email",
-            "token"
-        ]
-    },
-    {
-        "api_endpoint": "/api/user/login",
-        "method": "POST",
-        "payload": {
-            "Email": "user20464@example.com",
-            "Password": "Bh0*Qzw0nuPS",
-            "Role": "customer"
-        },
-        "expected_status": 200,
-        "expected_response_keys": [
-            "Email",
-            "token"
-        ]
-    },
-    {
-        "api_endpoint": "/metrics",
-        "method": "GET",
-        "payload": {
-            "Email": "user2925@example.com",
-            "Password": "Uu6!nZlBVpG5",
-            "Role": "customer"
+            "email": "user25558@example.com",
+            "password": "Nr5^gTCARMMZ"
         },
         "expected_status": 200
+    },
+    {
+        "api_endpoint": "/api/user/login",
+        "method": "POST",
+        "payload": {
+            "email": "user25558@example.com",
+            "password": "Nr5^gTCARMMZ"
+        },
+        "expected_status": 200
+    },
+    {
+        "api_endpoint": "/api/user/login",
+        "method": "POST",
+        "payload": {
+            "Email": "user25558@example.com",
+            "Password": "Nr5^gTCARMMZ",
+            "Role": "customer"
+        },
+        "expected_status": 400
     },
     {
         "api_endpoint": "/metrics",
         "method": "GET",
         "payload": {},
-        "expected_status": 200,
-        "expected_response_keys": []
+        "expected_status": 200
     }
 ]
