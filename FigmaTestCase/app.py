@@ -6,7 +6,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.memory import ConversationBufferMemory
 
 # API Key (Replace with your actual Gemini API key)
-GEMINI_API_KEY = "AIzaSyB4jbxlU5rFCkRh4GL34vPODGBKCMFF0Ys"
+GEMINI_API_KEY = "AIzaSyDqJ7A5NQoA22lIMw7n4ic9U5l5F3I5cBg"
 
 # Ensure data directory exists
 DATA_DIR = "data"

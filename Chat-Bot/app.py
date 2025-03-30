@@ -1,4 +1,4 @@
-GEMINI_API_KEY = "AIzaSyB4jbxlU5rFCkRh4GL34vPODGBKCMFF0Ys"
+GEMINI_API_KEY = "AIzaSyDqJ7A5NQoA22lIMw7n4ic9U5l5F3I5cBg"
 import os
 import streamlit as st
 from langchain.document_loaders import PyPDFLoader
