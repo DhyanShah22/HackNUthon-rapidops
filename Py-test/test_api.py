@@ -2,6 +2,7 @@ import pytest
 import requests
 import json
 import os
+import datetime
 
 LOG_FILE = "log.txt"
 
