@@ -1,0 +1,36 @@
+[
+    {
+        "api_endpoint": "/api/user/signup",
+        "method": "POST",
+        "payload": {
+            "Email": "testuser@example.com",
+            "Password": "StrongPass@123",
+            "Role": "customer"
+        },
+        "expected_status": 200,
+        "expected_response_keys": [
+            "Email",
+            "token"
+        ]
+    },
+    {
+        "api_endpoint": "/api/user/login",
+        "method": "POST",
+        "payload": {
+            "Email": "testuser@example.com",
+            "Password": "StrongPass@123"
+        },
+        "expected_status": 200,
+        "expected_response_keys": [
+            "Email",
+            "token"
+        ]
+    },
+    {
+        "api_endpoint": "/metrics",
+        "method": "GET",
+        "payload": {},
+        "expected_status": 200,
+        "expected_response_keys": []
+    }
+]
