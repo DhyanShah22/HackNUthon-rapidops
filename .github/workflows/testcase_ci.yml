@@ -63,7 +63,7 @@ jobs:
       - name: 🚀 Run UI Tests (Selenium)
         run: |
           if [ -f "FigmaTestCase/data/test_cases.json" ]; then
-            pytest Selenium-test/a --html=logs/ui_report.html --json-report --json-report-file=logs/ui_report.json | tee logs/ui_test_log.txt
+            pytest Selenium-test/app.py --html=logs/ui_report.html --json-report --json-report-file=logs/ui_report.json | tee logs/ui_test_log.txt
           else
             echo "⚠️ No UI test cases found, skipping UI tests." | tee logs/ui_test_log.txt
           fi
