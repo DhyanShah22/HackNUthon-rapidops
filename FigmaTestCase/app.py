@@ -79,35 +79,24 @@ memory = ConversationBufferMemory(memory_key="chat_history", return_messages=Tru
 # Generate Frontend Selenium test cases
 def generate_test_cases(ui_elements):
     prompt = f"""
-    Generate structured **frontend Selenium test cases** based on the following UI elements:
+    Generate **very simple, easy-to-pass frontend Selenium test cases** based on these UI elements:
     {', '.join(ui_elements)}
-    
-    The test cases should be very very simple and easy and cover **only frontend aspects**, including:
-    - UI validation (button visibility, text fields, images, navigation, responsiveness)
-    - Form validation (empty fields, incorrect formats, required fields)
-    - CSS rendering issues (colors, fonts, alignment)
-    - Page interactions (clicks, navigation, modal pop-ups)
 
-    Exclude any backend-related tests like authentication, database checks, or API responses.
-
-    Respond **only** with a valid JSON array, formatted like this:
+    The test cases must:
+    - Be **UI-only** (no backend checks)
+    - Cover ** Be very easy only simple element locate, no validation and only 3-4 test case**
+    - Follow **this JSON format**:
 
     [
         {{
-            "test_name": "Test Case Name",
-            "description": "Brief description of the test",
-            "steps": [
-                {{
-                    "action": "click",
-                    "target": "CSS selector or XPath",
-                    "value": "optional value"
-                }}
-            ],
-            "expected_result": "Expected outcome of the test"
+            "test_name": "Test Name",
+            "description": "Brief description",
+            "steps": [],
+            "expected_result": "Expected outcome"
         }}
     ]
 
-    Do not include explanations, markdown formatting, or extra text outside the JSON array.
+    **Do not include explanations or markdown formatting. Return only a valid JSON array.**
     """
 
     st.info("Generating frontend test cases...")
