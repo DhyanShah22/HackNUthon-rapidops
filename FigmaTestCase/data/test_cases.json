@@ -1,51 +1,115 @@
 [
     {
-        "test_name": "Login Frame Visibility",
-        "description": "Verify the login frame is displayed.",
-        "steps": [
-            {
-                "action": "locate",
-                "element": "FRAME - Log In"
-            }
-        ],
-        "expected_result": "Login frame is visible on the page."
+        "test_name": "Login Form Visibility",
+        "description": "Verify login form elements are visible",
+        "steps": [],
+        "expected_result": "Email, Password, Login now button, and Forgot? link are displayed."
     },
     {
-        "test_name": "Signup Frame Visibility",
-        "description": "Verify the signup frame is displayed.",
+        "test_name": "Empty Login Attempt",
+        "description": "Attempt login with empty email and password",
         "steps": [
             {
-                "action": "locate",
-                "element": "FRAME - Sign Up"
+                "action": "click",
+                "target": "TEXT:Login now"
             }
         ],
-        "expected_result": "Signup frame is visible on the page."
+        "expected_result": "Error message or validation highlighting empty fields."
     },
     {
-        "test_name": "Homepage Visibility",
-        "description": "Verify the homepage is displayed.",
+        "test_name": "Invalid Email Format",
+        "description": "Attempt login with invalid email format",
         "steps": [
             {
-                "action": "locate",
-                "element": "FRAME - Home Page"
-            }
-        ],
-        "expected_result": "Homepage is visible on the page."
-    },
-    {
-        "test_name": "Login Button Clickable",
-        "description": "Verify the login button is clickable on the login frame.",
-        "steps": [
-            {
-                "action": "locate",
-                "element": "FRAME - Log In"
+                "action": "sendKeys",
+                "target": "TEXT:Email",
+                "value": "invalid_email"
             },
             {
-                "action": "locate",
-                "element": "INSTANCE - Button",
-                "identifier": "Login now"
+                "action": "click",
+                "target": "TEXT:Login now"
             }
         ],
-        "expected_result": "Login button is located and clickable within the login frame."
+        "expected_result": "Error message indicating invalid email format."
+    },
+    {
+        "test_name": "Forgot Password Link",
+        "description": "Verify Forgot Password link navigates to the correct page",
+        "steps": [
+            {
+                "action": "click",
+                "target": "TEXT:Forgot\uff1f"
+            }
+        ],
+        "expected_result": "Navigation to password reset page or modal."
+    },
+    {
+        "test_name": "Signup Link Navigation",
+        "description": "Verify Sign Up link navigates to signup page",
+        "steps": [
+            {
+                "action": "click",
+                "target": "TEXT:Sign up"
+            }
+        ],
+        "expected_result": "Signup form is displayed with relevant fields."
+    },
+    {
+        "test_name": "Login Button Style",
+        "description": "Verify Login button styling (color, font, size)",
+        "steps": [],
+        "expected_result": "Login button matches design specifications."
+    },
+    {
+        "test_name": "Homepage Carousel Visibility",
+        "description": "Verify carousel elements on the homepage are visible",
+        "steps": [],
+        "expected_result": "Carousel images and navigation arrows are displayed."
+    },
+    {
+        "test_name": "Homepage Product Listing",
+        "description": "Verify product listings are displayed on the homepage",
+        "steps": [],
+        "expected_result": "Product images, titles, and prices are displayed."
+    },
+    {
+        "test_name": "Homepage Search Functionality",
+        "description": "Verify search bar functionality",
+        "steps": [
+            {
+                "action": "sendKeys",
+                "target": "TEXT:Search essentials, groceries and more...",
+                "value": "test"
+            },
+            {
+                "action": "sendKeys",
+                "target": "TEXT:Search essentials, groceries and more...",
+                "value": "\n"
+            }
+        ],
+        "expected_result": "Search results page is displayed or product suggestions appear."
+    },
+    {
+        "test_name": "Navigation Menu Functionality",
+        "description": "Verify navigation menu links",
+        "steps": [
+            {
+                "action": "click",
+                "target": "TEXT:Groceries"
+            }
+        ],
+        "expected_result": "Navigation to the Groceries category page."
+    },
+    {
+        "test_name": "Responsive Design - Mobile",
+        "description": "Verify responsive design on mobile viewport",
+        "steps": [
+            {
+                "action": "setViewportSize",
+                "width": 375,
+                "height": 812
+            }
+        ],
+        "expected_result": "UI elements adapt correctly to mobile screen size."
     }
 ]
