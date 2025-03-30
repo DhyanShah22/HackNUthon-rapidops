@@ -3,8 +3,8 @@
         "api_endpoint": "/api/user/signup",
         "method": "POST",
         "payload": {
-            "email": "user25558@example.com",
-            "password": "Nr5^gTCARMMZ"
+            "email": "user64554@example.com",
+            "password": "Ep6^aBea30s8"
         },
         "expected_status": 200
     },
@@ -12,8 +12,8 @@
         "api_endpoint": "/api/user/login",
         "method": "POST",
         "payload": {
-            "email": "user25558@example.com",
-            "password": "Nr5^gTCARMMZ"
+            "email": "user64554@example.com",
+            "password": "Ep6^aBea30s8"
         },
         "expected_status": 200
     },
@@ -21,9 +21,9 @@
         "api_endpoint": "/api/user/login",
         "method": "POST",
         "payload": {
-            "Email": "user25558@example.com",
-            "Password": "Nr5^gTCARMMZ",
-            "Role": "customer"
+            "Email": "user64554@example.com",
+            "Password": "Ep6^aBea30s8",
+            "Role": "vendor"
         },
         "expected_status": 400
     },
