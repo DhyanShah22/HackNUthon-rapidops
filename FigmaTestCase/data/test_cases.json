@@ -1,108 +1,51 @@
 [
     {
-        "test_name": "Login Page UI Elements Visibility",
-        "description": "Verify visibility of UI elements on the login page.",
-        "steps": [],
-        "expected_result": "Email, Password, Login now button, Forgot? link, Don't have an account? link, and BALA logo are visible."
-    },
-    {
-        "test_name": "Login Button Disabled State",
-        "description": "Verify the login button is disabled when fields are empty.",
-        "steps": [],
-        "expected_result": "Login now button is disabled."
-    },
-    {
-        "test_name": "Email Field Validation",
-        "description": "Verify email field validation.",
+        "test_name": "Login Frame Visibility",
+        "description": "Verify the login frame is displayed.",
         "steps": [
             {
-                "action": "type",
-                "target": "[data-testid='email-input']",
-                "value": "invalid-email"
+                "action": "locate",
+                "element": "FRAME - Log In"
+            }
+        ],
+        "expected_result": "Login frame is visible on the page."
+    },
+    {
+        "test_name": "Signup Frame Visibility",
+        "description": "Verify the signup frame is displayed.",
+        "steps": [
+            {
+                "action": "locate",
+                "element": "FRAME - Sign Up"
+            }
+        ],
+        "expected_result": "Signup frame is visible on the page."
+    },
+    {
+        "test_name": "Homepage Visibility",
+        "description": "Verify the homepage is displayed.",
+        "steps": [
+            {
+                "action": "locate",
+                "element": "FRAME - Home Page"
+            }
+        ],
+        "expected_result": "Homepage is visible on the page."
+    },
+    {
+        "test_name": "Login Button Clickable",
+        "description": "Verify the login button is clickable on the login frame.",
+        "steps": [
+            {
+                "action": "locate",
+                "element": "FRAME - Log In"
             },
             {
-                "action": "blur",
-                "target": "[data-testid='email-input']"
+                "action": "locate",
+                "element": "INSTANCE - Button",
+                "identifier": "Login now"
             }
         ],
-        "expected_result": "An error message is displayed indicating invalid email format."
-    },
-    {
-        "test_name": "Password Field Validation",
-        "description": "Verify password field validation.",
-        "steps": [
-            {
-                "action": "type",
-                "target": "[data-testid='password-input']",
-                "value": "short"
-            },
-            {
-                "action": "blur",
-                "target": "[data-testid='password-input']"
-            }
-        ],
-        "expected_result": "An error message might be displayed indicating password length requirements (if any)."
-    },
-    {
-        "test_name": "Forgot Password Link Navigation",
-        "description": "Verify navigation to the forgot password page.",
-        "steps": [
-            {
-                "action": "click",
-                "target": "[data-testid='forgot-password-link']"
-            }
-        ],
-        "expected_result": "The forgot password page or modal is displayed."
-    },
-    {
-        "test_name": "Sign Up Link Navigation",
-        "description": "Verify navigation to the sign-up page.",
-        "steps": [
-            {
-                "action": "click",
-                "target": "[data-testid='sign-up-link']"
-            }
-        ],
-        "expected_result": "The sign-up page is displayed."
-    },
-    {
-        "test_name": "Homepage Carousel Navigation",
-        "description": "Verify navigation through the homepage carousel.",
-        "steps": [
-            {
-                "action": "click",
-                "target": "[data-testid='carousel-next-button']"
-            }
-        ],
-        "expected_result": "The carousel advances to the next slide."
-    },
-    {
-        "test_name": "Product Card Details",
-        "description": "Verify product card details are displayed.",
-        "steps": [],
-        "expected_result": "Product image, name, price, and discount are visible on each product card."
-    },
-    {
-        "test_name": "View All Products Link",
-        "description": "Verify the View All products link navigation.",
-        "steps": [
-            {
-                "action": "click",
-                "target": "[data-testid='view-all-products-link']"
-            }
-        ],
-        "expected_result": "The all products page is displayed."
-    },
-    {
-        "test_name": "Search Bar Functionality",
-        "description": "Verify the search bar allows input.",
-        "steps": [
-            {
-                "action": "type",
-                "target": "[data-testid='search-input']",
-                "value": "test search"
-            }
-        ],
-        "expected_result": "The search input field displays the entered text."
+        "expected_result": "Login button is located and clickable within the login frame."
     }
 ]

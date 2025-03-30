@@ -1,0 +1,59 @@
+============================= test session starts ==============================
+platform linux -- Python 3.9.21, pytest-8.3.5, pluggy-1.5.0
+rootdir: /home/runner/work/HackNUthon-rapidops/HackNUthon-rapidops
+plugins: metadata-3.1.1, langsmith-0.3.19, html-4.1.1, json-report-1.5.0, anyio-4.9.0
+collected 3 items
+
+Py-test/test_api.py F..                                                  [100%]
+
+=================================== FAILURES ===================================
+_____________________________ test_api[test_case0] _____________________________
+
+test_case = {'api_endpoint': '/api/user/signup', 'expected_response_keys': ['Email', 'token'], 'expected_status': 200, 'method': 'POST', ...}
+
+    @pytest.mark.parametrize("test_case", test_cases)
+    def test_api(test_case):
+        """Dynamically test API endpoints from test_cases.json."""
+        url = BASE_URL + test_case["api_endpoint"]
+        method = test_case["method"]
+        payload = test_case.get("payload", {})
+        expected_status = test_case["expected_status"]
+        expected_keys = test_case.get("expected_response_keys", [])
+    
+        try:
+            response = requests.request(method, url, json=payload)
+    
+            # Log the response for debugging
+            print(f"\nRequest: {method} {url}")
+            print(f"Payload: {payload}")
+            print(f"Response Status: {response.status_code}")
+            print(f"Response Body: {response.text}")
+    
+            # Assertions
+            if response.status_code != expected_status:
+                failed_tests.append(
+                    {
+                        "api_endpoint": test_case["api_endpoint"],
+                        "method": method,
+                        "payload": payload,
+                        "expected_status": expected_status,
+                        "actual_status": response.status_code,
+                        "error": f"Expected {expected_status}, got {response.status_code}",
+                    }
+                )
+>               pytest.fail(f"❌ Expected {expected_status}, but got {response.status_code}")
+E               Failed: ❌ Expected 200, but got 400
+
+Py-test/test_api.py:85: Failed
+----------------------------- Captured stdout call -----------------------------
+
+Request: POST https://hack-n-uthon-6-0.vercel.app//api/user/signup
+Payload: {'Email': 'testuser@example.com', 'Password': 'StrongPass@123', 'Role': 'customer'}
+Response Status: 400
+Response Body: {"error":"Email is already in use."}
+--------------------------------- JSON report ----------------------------------
+report saved to: logs/api_report.json
+- Generated html report: file:///home/runner/work/HackNUthon-rapidops/HackNUthon-rapidops/logs/api_report.html -
+=========================== short test summary info ============================
+FAILED Py-test/test_api.py::test_api[test_case0] - Failed: ❌ Expected 200, but got 400
+========================= 1 failed, 2 passed in 2.18s ==========================
