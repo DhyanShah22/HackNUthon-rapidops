@@ -1,89 +1,108 @@
 [
     {
         "test_name": "Login Page UI Elements Visibility",
-        "description": "Verify visibility of key elements on the login page.",
+        "description": "Verify visibility of UI elements on the login page.",
         "steps": [],
-        "expected_result": "Email field, Password field, Login button, 'Forgot?' link, and 'Sign Up' link are visible."
+        "expected_result": "Email, Password, Login now button, Forgot? link, Don't have an account? link, and BALA logo are visible."
     },
     {
-        "test_name": "Login Button Disabled State",
-        "description": "Verify login button is disabled when fields are empty.",
-        "steps": [],
-        "expected_result": "Login button is disabled."
-    },
-    {
-        "test_name": "Invalid Email Format Validation",
-        "description": "Verify error message on entering invalid email format.",
+        "test_name": "Empty Login Form Submission",
+        "description": "Verify form validation with empty fields.",
         "steps": [
             {
-                "action": "type",
-                "target": "CSS selector or XPath for email input",
+                "action": "click",
+                "target": "TEXT:Login now"
+            }
+        ],
+        "expected_result": "Error messages for empty Email and Password fields are displayed."
+    },
+    {
+        "test_name": "Invalid Email Format",
+        "description": "Verify form validation with an invalid email format.",
+        "steps": [
+            {
+                "action": "sendKeys",
+                "target": "TEXT:Email",
                 "value": "invalid_email"
+            },
+            {
+                "action": "click",
+                "target": "TEXT:Login now"
             }
         ],
-        "expected_result": "Error message indicating invalid email format is displayed."
+        "expected_result": "Error message for invalid email format is displayed."
     },
     {
-        "test_name": "Password Visibility Toggle",
-        "description": "Verify password visibility toggle functionality.",
+        "test_name": "Navigate to Sign Up Page",
+        "description": "Verify navigation to the sign-up page.",
         "steps": [
             {
                 "action": "click",
-                "target": "CSS selector or XPath for eye icon"
+                "target": "TEXT:Sign up"
             }
         ],
-        "expected_result": "Password field switches between masked and unmasked states."
-    },
-    {
-        "test_name": "Navigation to Sign Up Page",
-        "description": "Verify navigation to Sign Up page.",
-        "steps": [
-            {
-                "action": "click",
-                "target": "CSS selector or XPath for 'Sign Up' link"
-            }
-        ],
-        "expected_result": "Sign Up page is loaded and visible."
+        "expected_result": "Sign-up page is displayed with relevant elements (e.g., Email, Password, Login now button)."
     },
     {
         "test_name": "Sign Up Page UI Elements Visibility",
-        "description": "Verify visibility of key elements on the sign-up page.",
+        "description": "Verify visibility of UI elements on the sign-up page.",
         "steps": [],
-        "expected_result": "Email field, Password field, and 'Login now' button are visible."
+        "expected_result": "Email, Password, Login now button, Already have an account? link, and BALA logo are visible."
     },
     {
-        "test_name": "Homepage Carousel Navigation",
-        "description": "Verify carousel navigation on the homepage.",
+        "test_name": "Home Page UI Elements Visibility",
+        "description": "Verify visibility of key elements on the home page.",
+        "steps": [
+            {
+                "action": "navigate",
+                "target": "/home"
+            }
+        ],
+        "expected_result": "Search bar, category menu, product listings, and MegaMart logo are visible."
+    },
+    {
+        "test_name": "Search Functionality",
+        "description": "Verify basic search functionality.",
+        "steps": [
+            {
+                "action": "sendKeys",
+                "target": "TEXT:Search essentials, groceries and more...",
+                "value": "test"
+            },
+            {
+                "action": "sendKeys",
+                "target": "TEXT:Search essentials, groceries and more...",
+                "value": "\n"
+            }
+        ],
+        "expected_result": "Search results related to 'test' are displayed, or a 'no results' message is shown."
+    },
+    {
+        "test_name": "Category Navigation",
+        "description": "Verify navigation through product categories.",
         "steps": [
             {
                 "action": "click",
-                "target": "CSS selector or XPath for next carousel arrow"
+                "target": "TEXT:Groceries"
             }
         ],
-        "expected_result": "Carousel advances to the next slide."
+        "expected_result": "Products related to the 'Groceries' category are displayed."
     },
     {
-        "test_name": "Product Card Visibility",
-        "description": "Verify product cards are displayed on the homepage.",
+        "test_name": "Login Button CSS",
+        "description": "Verify the Login button CSS properties.",
         "steps": [],
-        "expected_result": "Product cards with images, titles, and prices are visible."
+        "expected_result": "Login button has the correct background color, font size, and padding."
     },
     {
-        "test_name": "Search Bar Functionality",
-        "description": "Verify search bar input and placeholder text.",
+        "test_name": "Responsive Design - Mobile View",
+        "description": "Verify responsiveness on mobile view.",
         "steps": [
             {
-                "action": "type",
-                "target": "CSS selector or XPath for search input",
-                "value": "test search"
+                "action": "resizeWindow",
+                "target": "400x800"
             }
         ],
-        "expected_result": "Text entered appears in the search bar."
-    },
-    {
-        "test_name": "Navigation Menu Items Visibility",
-        "description": "Verify navigation menu items are displayed.",
-        "steps": [],
-        "expected_result": "Navigation menu items like 'Groceries', 'Fashion', 'Electronics' are visible."
+        "expected_result": "UI elements adapt correctly to the smaller screen size without overlapping or clipping."
     }
 ]
