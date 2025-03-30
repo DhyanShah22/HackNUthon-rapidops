@@ -5,6 +5,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options
 import time
 
 # Load test cases from JSON file
@@ -20,7 +21,13 @@ BASE_URL = "https://hack-n-uthon-6-0-pu3p.vercel.app/"
 @pytest.fixture(scope="module")
 def driver():
     """Setup and teardown of Selenium WebDriver."""
-    driver = webdriver.Chrome()
+    options = Options()
+    options.add_argument("--headless")  # Run in headless mode for GitHub Actions
+    options.add_argument("--no-sandbox")  
+    options.add_argument("--disable-dev-shm-usage")
+    options.add_argument("--disable-gpu")  
+    options.add_argument("--window-size=1920,1080") 
+    driver = webdriver.Chrome(options=options)
     driver.maximize_window()
     yield driver  # Provide driver to tests
     driver.quit()

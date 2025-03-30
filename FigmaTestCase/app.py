@@ -2,11 +2,22 @@ import os
 import json
 import requests
 import streamlit as st
+import subprocess
+import re
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.memory import ConversationBufferMemory
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # API Key (Replace with your actual Gemini API key)
 GEMINI_API_KEY = "AIzaSyDqJ7A5NQoA22lIMw7n4ic9U5l5F3I5cBg"
+
+# GitHub Configuration
+GITHUB_USERNAME = os.getenv("GITHUB_USERNAME")
+GITHUB_REPO = os.getenv("GITHUB_REPO")
+PAT_TOKEN = os.getenv("PAT_TOKEN")
+FILE_PATH_IN_REPO = os.getenv("FILE_PATH_IN_REPO")
 
 # Ensure data directory exists
 DATA_DIR = "data"
@@ -76,27 +87,59 @@ def extract_ui_elements(figma_data):
 chat_model = ChatGoogleGenerativeAI(model="gemini-1.5-pro", google_api_key=GEMINI_API_KEY)
 memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
 
+def push_to_github():
+    """Commits and pushes the test_cases.json file to GitHub."""
+    try:
+        repo_url = f"https://{GITHUB_USERNAME}:{PAT_TOKEN}@github.com/{GITHUB_USERNAME}/{GITHUB_REPO}.git"
+        
+        commands = [
+            "git config --global user.name 'TestCaseGPT'",
+            "git config --global user.email 'testcasegpt@users.noreply.github.com'",
+            "git add data/test_cases.json",
+            'git commit -m "Updated test cases"',
+            f"git push {repo_url} main"
+        ]
+        
+        for cmd in commands:
+            subprocess.run(cmd, shell=True, check=True)
+        
+        st.success("✅ Test cases pushed to GitHub successfully!")
+    
+    except subprocess.CalledProcessError as e:
+        st.error(f"❌ Git push failed: {str(e)}")
+
 # Generate Frontend Selenium test cases
 def generate_test_cases(ui_elements):
     prompt = f"""
-    Generate **very simple, easy-to-pass frontend Selenium test cases** based on these UI elements:
+    Generate structured **frontend Selenium test cases** based on the following UI elements:
     {', '.join(ui_elements)}
+    
+    The test cases should be very very simple and easy and cover **only frontend aspects**, including:
+    - UI validation (button visibility, text fields, images, navigation, responsiveness)
+    - Form validation (empty fields, incorrect formats, required fields)
+    - CSS rendering issues (colors, fonts, alignment)
+    - Page interactions (clicks, navigation, modal pop-ups)
 
-    The test cases must:
-    - Be **UI-only** (no backend checks)
-    - Cover ** Be very easy only simple element locate, no validation and only 3-4 test case**
-    - Follow **this JSON format**:
+    Exclude any backend-related tests like authentication, database checks, or API responses.
+
+    Respond **only** with a valid JSON array, formatted like this:
 
     [
         {{
-            "test_name": "Test Name",
-            "description": "Brief description",
-            "steps": [],
-            "expected_result": "Expected outcome"
+            "test_name": "Test Case Name",
+            "description": "Brief description of the test",
+            "steps": [
+                {{
+                    "action": "click",
+                    "target": "CSS selector or XPath",
+                    "value": "optional value"
+                }}
+            ],
+            "expected_result": "Expected outcome of the test"
         }}
     ]
 
-    **Do not include explanations or markdown formatting. Return only a valid JSON array.**
+    Do not include explanations, markdown formatting, or extra text outside the JSON array.
     """
 
     st.info("Generating frontend test cases...")
@@ -165,5 +208,6 @@ if st.button("Generate Frontend Test Cases"):
                         file_name="frontend_selenium_test_cases.json",
                         mime="application/json"
                     )
+                    push_to_github()
     else:
         st.warning("⚠️ Please enter both Figma URL and API Token.")

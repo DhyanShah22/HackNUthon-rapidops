@@ -51,14 +51,14 @@ jobs:
         with:
           python-version: "3.9"
 
-      - name: 🛠️ Install Selenium & WebDriver
+      - name: 📦 Install Dependencies
         run: |
           pip install -r requirements.txt
-          pip install selenium pytest-html pytest-json-report
-          sudo apt-get update
-          sudo apt-get install -y chromium-chromedriver
-          ln -s /usr/bin/chromedriver /usr/local/bin/chromedriver
+          pip install pytest-html pytest-json-report
           mkdir -p logs  # Ensure logs folder exists
+
+      - name: 🛠️ Install Google Chrome & ChromeDriver
+        uses: browser-actions/setup-chrome@v1
 
       - name: 🚀 Run UI Tests (Selenium)
         run: |
@@ -102,6 +102,6 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add logs/
+          git add logs/*.txt
           git commit -m "📜 Updated test logs [CI/CD]" || echo "No changes to commit"
-          git push https://$GH_PAT@github.com/DhyanShah22/HackNUthon-rapidops.git main
+          git push https://$GH_PAT@github.com/DevMehta22/HackNUthon-rapidops.git main
