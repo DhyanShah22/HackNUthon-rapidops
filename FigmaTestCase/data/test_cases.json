@@ -1,129 +1,89 @@
 [
     {
-        "test_name": "Login Form Visibility",
-        "description": "Verify login form elements are visible.",
+        "test_name": "Login Page UI Elements Visibility",
+        "description": "Verify visibility of key elements on the login page.",
         "steps": [],
-        "expected_result": "Email, Password, Login now button, and 'Don't have an account?' text are visible."
+        "expected_result": "Email field, Password field, Login button, 'Forgot?' link, and 'Sign Up' link are visible."
     },
     {
-        "test_name": "Empty Login Attempt",
-        "description": "Attempt login with empty email and password.",
-        "steps": [
-            {
-                "action": "click",
-                "target": "[data-testid='Login now']"
-            }
-        ],
-        "expected_result": "Error message or validation highlighting empty fields."
+        "test_name": "Login Button Disabled State",
+        "description": "Verify login button is disabled when fields are empty.",
+        "steps": [],
+        "expected_result": "Login button is disabled."
     },
     {
-        "test_name": "Invalid Email Format",
-        "description": "Attempt login with invalid email format.",
+        "test_name": "Invalid Email Format Validation",
+        "description": "Verify error message on entering invalid email format.",
         "steps": [
             {
-                "action": "sendKeys",
-                "target": "[data-testid='Email']",
-                "value": "invalid-email"
-            },
-            {
-                "action": "click",
-                "target": "[data-testid='Login now']"
+                "action": "type",
+                "target": "CSS selector or XPath for email input",
+                "value": "invalid_email"
             }
         ],
-        "expected_result": "Error message indicating invalid email format."
+        "expected_result": "Error message indicating invalid email format is displayed."
     },
     {
         "test_name": "Password Visibility Toggle",
-        "description": "Test password visibility toggle functionality.",
+        "description": "Verify password visibility toggle functionality.",
         "steps": [
             {
                 "action": "click",
-                "target": "[data-testid='Icon/eye']"
+                "target": "CSS selector or XPath for eye icon"
             }
         ],
-        "expected_result": "Password field type toggles between 'password' and 'text'."
+        "expected_result": "Password field switches between masked and unmasked states."
     },
     {
-        "test_name": "Signup Link Navigation",
-        "description": "Navigate to signup page from login page.",
+        "test_name": "Navigation to Sign Up Page",
+        "description": "Verify navigation to Sign Up page.",
         "steps": [
             {
                 "action": "click",
-                "target": "[data-testid='Sign up']"
+                "target": "CSS selector or XPath for 'Sign Up' link"
             }
         ],
-        "expected_result": "Signup form is displayed with relevant fields."
+        "expected_result": "Sign Up page is loaded and visible."
     },
     {
-        "test_name": "Home Page Navigation from Login",
-        "description": "Simulate successful login and check home page navigation.",
-        "steps": [
-            {
-                "action": "sendKeys",
-                "target": "[data-testid='Email']",
-                "value": "test@example.com"
-            },
-            {
-                "action": "sendKeys",
-                "target": "[data-testid='Password']",
-                "value": "password"
-            },
-            {
-                "action": "click",
-                "target": "[data-testid='Login now']"
-            }
-        ],
-        "expected_result": "Home page elements like search bar, categories, and product listings are visible. (Assuming successful login navigates to home page)"
+        "test_name": "Sign Up Page UI Elements Visibility",
+        "description": "Verify visibility of key elements on the sign-up page.",
+        "steps": [],
+        "expected_result": "Email field, Password field, and 'Login now' button are visible."
     },
     {
-        "test_name": "Search Bar Functionality",
-        "description": "Test search bar interaction.",
-        "steps": [
-            {
-                "action": "sendKeys",
-                "target": "[data-testid='Search essentials, groceries and more...']",
-                "value": "test search"
-            },
-            {
-                "action": "sendKeys",
-                "target": "[data-testid='Search essentials, groceries and more...']",
-                "value": "{ENTER}"
-            }
-        ],
-        "expected_result": "Search results or suggestions related to 'test search' are displayed."
-    },
-    {
-        "test_name": "Category Navigation",
-        "description": "Test navigation through product categories.",
+        "test_name": "Homepage Carousel Navigation",
+        "description": "Verify carousel navigation on the homepage.",
         "steps": [
             {
                 "action": "click",
-                "target": "[data-testid='Groceries']"
+                "target": "CSS selector or XPath for next carousel arrow"
             }
         ],
-        "expected_result": "Products related to the 'Groceries' category are displayed."
+        "expected_result": "Carousel advances to the next slide."
     },
     {
         "test_name": "Product Card Visibility",
-        "description": "Verify product card elements are visible.",
+        "description": "Verify product cards are displayed on the homepage.",
         "steps": [],
-        "expected_result": "Product image, name, price, and discount information are visible on product cards."
+        "expected_result": "Product cards with images, titles, and prices are visible."
     },
     {
-        "test_name": "Login Button Styling",
-        "description": "Check the styling of the login button.",
-        "steps": [],
-        "expected_result": "Login button has correct background color, font size, and padding."
-    },
-    {
-        "test_name": "Responsive Design - Mobile View",
-        "description": "Check responsiveness on mobile view.",
+        "test_name": "Search Bar Functionality",
+        "description": "Verify search bar input and placeholder text.",
         "steps": [
             {
-                "action": "resizeWindow",
-                "target": "375, 812"
+                "action": "type",
+                "target": "CSS selector or XPath for search input",
+                "value": "test search"
             }
         ],
-        "expected_result": "UI elements adapt correctly to mobile screen size, no overlapping or clipping."
+        "expected_result": "Text entered appears in the search bar."
+    },
+    {
+        "test_name": "Navigation Menu Items Visibility",
+        "description": "Verify navigation menu items are displayed.",
+        "steps": [],
+        "expected_result": "Navigation menu items like 'Groceries', 'Fashion', 'Electronics' are visible."
     }
 ]
