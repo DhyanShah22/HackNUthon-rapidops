@@ -1,115 +1,108 @@
 [
     {
-        "test_name": "Login Form Visibility",
-        "description": "Verify login form elements are visible",
+        "test_name": "Login Page UI Elements Visibility",
+        "description": "Verify visibility of key elements on the login page.",
         "steps": [],
-        "expected_result": "Email, Password, Login now button, and Forgot? link are displayed."
+        "expected_result": "Email field, Password field, Login button, 'Forgot?' link, and 'Sign Up' link are visible."
+    },
+    {
+        "test_name": "Login Button Disabled State",
+        "description": "Verify the login button is initially disabled.",
+        "steps": [],
+        "expected_result": "Login button is disabled."
     },
     {
         "test_name": "Empty Login Attempt",
-        "description": "Attempt login with empty email and password",
+        "description": "Attempt login with empty email and password fields.",
         "steps": [
             {
                 "action": "click",
-                "target": "TEXT:Login now"
+                "target": "[data-testid='Login now']"
             }
         ],
-        "expected_result": "Error message or validation highlighting empty fields."
+        "expected_result": "Error messages are displayed for both email and password fields."
     },
     {
         "test_name": "Invalid Email Format",
-        "description": "Attempt login with invalid email format",
+        "description": "Attempt login with an invalid email format.",
         "steps": [
             {
-                "action": "sendKeys",
-                "target": "TEXT:Email",
+                "action": "type",
+                "target": "[data-testid='Email']",
                 "value": "invalid_email"
             },
             {
                 "action": "click",
-                "target": "TEXT:Login now"
+                "target": "[data-testid='Login now']"
             }
         ],
-        "expected_result": "Error message indicating invalid email format."
+        "expected_result": "Error message is displayed for the email field indicating invalid format."
     },
     {
-        "test_name": "Forgot Password Link",
-        "description": "Verify Forgot Password link navigates to the correct page",
+        "test_name": "Password Visibility Toggle",
+        "description": "Verify password visibility toggle functionality.",
         "steps": [
             {
                 "action": "click",
-                "target": "TEXT:Forgot\uff1f"
+                "target": "[data-testid='Icon/eye']"
             }
         ],
-        "expected_result": "Navigation to password reset page or modal."
+        "expected_result": "Password field input type changes to 'text' and back to 'password' on subsequent clicks."
     },
     {
-        "test_name": "Signup Link Navigation",
-        "description": "Verify Sign Up link navigates to signup page",
+        "test_name": "Navigate to Sign Up Page",
+        "description": "Navigate to the sign-up page.",
         "steps": [
             {
                 "action": "click",
-                "target": "TEXT:Sign up"
+                "target": "[data-testid='Sign up']"
             }
         ],
-        "expected_result": "Signup form is displayed with relevant fields."
+        "expected_result": "Sign-up page is displayed with relevant fields and buttons."
     },
     {
-        "test_name": "Login Button Style",
-        "description": "Verify Login button styling (color, font, size)",
-        "steps": [],
-        "expected_result": "Login button matches design specifications."
-    },
-    {
-        "test_name": "Homepage Carousel Visibility",
-        "description": "Verify carousel elements on the homepage are visible",
-        "steps": [],
-        "expected_result": "Carousel images and navigation arrows are displayed."
-    },
-    {
-        "test_name": "Homepage Product Listing",
-        "description": "Verify product listings are displayed on the homepage",
-        "steps": [],
-        "expected_result": "Product images, titles, and prices are displayed."
-    },
-    {
-        "test_name": "Homepage Search Functionality",
-        "description": "Verify search bar functionality",
+        "test_name": "Homepage Carousel Navigation",
+        "description": "Verify carousel navigation functionality on the homepage.",
         "steps": [
             {
-                "action": "sendKeys",
-                "target": "TEXT:Search essentials, groceries and more...",
+                "action": "click",
+                "target": "[data-testid='Arrow - Right 3']"
+            }
+        ],
+        "expected_result": "Carousel slides to the next image."
+    },
+    {
+        "test_name": "Homepage Search Input",
+        "description": "Verify search input functionality on the homepage.",
+        "steps": [
+            {
+                "action": "type",
+                "target": "[data-testid='Search essentials, groceries and more...']",
                 "value": "test"
-            },
-            {
-                "action": "sendKeys",
-                "target": "TEXT:Search essentials, groceries and more...",
-                "value": "\n"
             }
         ],
-        "expected_result": "Search results page is displayed or product suggestions appear."
+        "expected_result": "Search input field displays the entered text."
     },
     {
-        "test_name": "Navigation Menu Functionality",
-        "description": "Verify navigation menu links",
+        "test_name": "Homepage Category Navigation",
+        "description": "Verify category navigation functionality on the homepage.",
         "steps": [
             {
                 "action": "click",
-                "target": "TEXT:Groceries"
+                "target": "[data-testid='Groceries']"
             }
         ],
-        "expected_result": "Navigation to the Groceries category page."
+        "expected_result": "Navigates to the groceries category page (or displays relevant products)."
     },
     {
-        "test_name": "Responsive Design - Mobile",
-        "description": "Verify responsive design on mobile viewport",
+        "test_name": "Homepage 'View All' Button Functionality",
+        "description": "Verify the 'View All' button functionality on product sections.",
         "steps": [
             {
-                "action": "setViewportSize",
-                "width": 375,
-                "height": 812
+                "action": "click",
+                "target": "[data-testid='View All']"
             }
         ],
-        "expected_result": "UI elements adapt correctly to mobile screen size."
+        "expected_result": "Navigates to the corresponding product listing page."
     }
 ]
