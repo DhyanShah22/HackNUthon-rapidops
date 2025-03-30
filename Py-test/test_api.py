@@ -3,6 +3,41 @@ import requests
 import json
 import os
 
+LOG_FILE = "log.txt"
+
+def log_test_case(test_case, result, error=""):
+    """Logs test case execution details."""
+    with open(LOG_FILE, "a") as log:
+        log.write(f"Timestamp: {datetime.datetime.now()}\n")
+        log.write(f"Test Case: {json.dumps(test_case, indent=4)}\n")
+        log.write(f"Result: {'✅ Passed' if result else '❌ Failed'}\n")
+        if error:
+            log.write(f"Error: {error}\n")
+        log.write("="*50 + "\n")
+
+# Example test execution
+test_case = {
+    "api_endpoint": "/api/user/login",
+    "method": "POST",
+    "payload": {"email": "test@example.com", "password": "SecurePass123"},
+    "expected_status": 200
+}
+
+try:
+    # Simulate test execution
+    response_status = 200  # Replace with actual API call result
+    log_test_case(test_case, response_status == test_case["expected_status"])
+except Exception as e:
+    log_test_case(test_case, False, str(e))
+
+try:
+    # Simulate test execution
+    response_status = 200  # Replace with actual API call result
+    log_test_case(test_case, response_status == test_case["expected_status"])
+except Exception as e:
+    log_test_case(test_case, False, str(e))
+
+
 # Load test cases from JSON file
 with open("GenerateTestCase/data/test_cases.json", "r") as file:
     test_cases = json.load(file)
