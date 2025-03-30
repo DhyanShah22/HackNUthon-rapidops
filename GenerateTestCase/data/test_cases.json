@@ -3,8 +3,8 @@
         "api_endpoint": "/api/user/signup",
         "method": "POST",
         "payload": {
-            "Email": "user58535@example.com",
-            "Password": "Xj0%VjH97iis",
+            "Email": "user54115@example.com",
+            "Password": "Dw3&xit8h3Rq",
             "Role": "customer"
         },
         "expected_status": 200,
@@ -17,8 +17,8 @@
         "api_endpoint": "/api/user/signup",
         "method": "POST",
         "payload": {
-            "Email": "user10265@example.com",
-            "Password": "Ga5%gvOeDYbT",
+            "Email": "user59886@example.com",
+            "Password": "Ce8$Zr9Hivg4",
             "Role": "customer"
         },
         "expected_status": 200,
@@ -31,8 +31,8 @@
         "api_endpoint": "/api/user/login",
         "method": "POST",
         "payload": {
-            "Email": "user21062@example.com",
-            "Password": "Kz1%gsIHU9s8",
+            "Email": "user28650@example.com",
+            "Password": "Wd7!41v6flu5",
             "Role": "customer"
         },
         "expected_status": 200,
@@ -45,8 +45,8 @@
         "api_endpoint": "/api/user/login",
         "method": "POST",
         "payload": {
-            "Email": "user20464@example.com",
-            "Password": "Bh0*Qzw0nuPS",
+            "Email": "user69879@example.com",
+            "Password": "Gw3&Urt8qzE5",
             "Role": "customer"
         },
         "expected_status": 200,
@@ -59,8 +59,8 @@
         "api_endpoint": "/metrics",
         "method": "GET",
         "payload": {
-            "Email": "user2925@example.com",
-            "Password": "Uu6!nZlBVpG5",
+            "Email": "user42574@example.com",
+            "Password": "Eq9%J5SyIyD9",
             "Role": "customer"
         },
         "expected_status": 200
