@@ -52,16 +52,7 @@ jobs:
           python-version: "3.9"
 
       - name: 🛠️ Install Google Chrome & ChromeDriver
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
-          CHROME_VERSION=$(google-chrome --version | grep -oP '[0-9]+\.[0-9]+\.[0-9]+')
-          DRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION)
-          wget https://chromedriver.storage.googleapis.com/$DRIVER_VERSION/chromedriver_linux64.zip
-          unzip chromedriver_linux64.zip
-          sudo mv chromedriver /usr/bin/chromedriver
-          sudo chmod +x /usr/bin/chromedriver
-          mkdir -p logs  # Ensure logs folder exists
+        uses: browser-actions/setup-chrome@v1
 
       - name: 🚀 Run UI Tests (Selenium)
         run: |
