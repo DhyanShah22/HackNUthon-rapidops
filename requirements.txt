@@ -1,7 +1,7 @@
 # Streamlit for UI
 streamlit>=1.29.0  
 
-# LangChain & Google Generative AI
+# LangChain & Google Generative AI (Remove if not needed)
 langchain>=0.1.0  
 langchain-google-genai>=0.0.5  
 google-generativeai>=0.3.1  
@@ -20,17 +20,18 @@ python-dotenv>=1.0.0
 typing-extensions>=4.8.0  
 pydantic>=2.5.2  
 
-# Web Scraping & Requests (If Needed)  
+# Web Scraping & Requests  
 requests>=2.31.0  
 
-# Selenium for Automated Testing  
+# Selenium for Automated UI Testing  
 selenium>=4.10.0  
+webdriver-manager>=4.0.1  
+chromedriver-autoinstaller>=0.6.0  
 
 # Pytest for API Testing  
 pytest>=7.4.0  
 pytest-html>=4.0.1  
+pytest-json-report>=1.5.0  
 
 # GitPython for pushing test cases to GitHub  
 gitpython>=3.1.40  
-
-# Any additional dependencies you might need  
