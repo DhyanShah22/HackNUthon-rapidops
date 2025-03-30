@@ -1,103 +1,118 @@
 [
     {
-        "test_name": "Login Page UI Elements Validation",
-        "description": "Verify the visibility of UI elements on the login page.",
+        "test_name": "Login Page UI Elements Visibility",
+        "description": "Verify visibility of Login page UI elements.",
         "steps": [],
-        "expected_result": "Email, Password, Login Now button, Forgot? link, Sign Up link, and logo are visible."
+        "expected_result": "Email, Password, Login now button, Forgot? link, Don't have an account? link, and Bala logo are visible."
     },
     {
         "test_name": "Empty Login Form Submission",
-        "description": "Verify form validation with empty email and password fields.",
+        "description": "Verify form validation for empty fields.",
         "steps": [
             {
                 "action": "click",
                 "target": "TEXT:Login now"
             }
         ],
-        "expected_result": "Appropriate error messages are displayed for empty email and password fields."
+        "expected_result": "Error messages or visual cues indicating required fields (Email and Password) are displayed."
     },
     {
         "test_name": "Invalid Email Format",
-        "description": "Verify form validation with an invalid email format.",
+        "description": "Verify email format validation.",
         "steps": [
             {
                 "action": "sendKeys",
                 "target": "TEXT:Email",
-                "value": "invalid_email"
+                "value": "invalid-email"
             },
             {
                 "action": "click",
                 "target": "TEXT:Login now"
             }
         ],
-        "expected_result": "An error message is displayed indicating the invalid email format."
+        "expected_result": "Error message indicating invalid email format is displayed."
+    },
+    {
+        "test_name": "Password Visibility Toggle",
+        "description": "Verify password show/hide functionality.",
+        "steps": [
+            {
+                "action": "click",
+                "target": "INSTANCE:Icon/eye"
+            }
+        ],
+        "expected_result": "Password field input type changes to 'text' or shows password characters. Clicking again hides the password."
     },
     {
         "test_name": "Navigate to Sign Up Page",
-        "description": "Verify navigation to the Sign Up page.",
+        "description": "Verify navigation to Sign Up page.",
         "steps": [
             {
                 "action": "click",
                 "target": "TEXT:Sign up"
             }
         ],
-        "expected_result": "Sign Up page is loaded with relevant UI elements."
+        "expected_result": "Sign Up page is displayed with expected elements (e.g., Login now button, Already have an account? link)."
     },
     {
-        "test_name": "Sign Up Page UI Elements Validation",
-        "description": "Verify the visibility of UI elements on the Sign Up page.",
-        "steps": [],
-        "expected_result": "Email, Password, Login Now button, Login link, and logo are visible."
-    },
-    {
-        "test_name": "Homepage UI Elements Validation",
-        "description": "Verify the visibility of UI elements on the homepage after navigating from login.",
-        "steps": [
-            {
-                "action": "navigate",
-                "target": "FRAME:Home Page"
-            }
-        ],
-        "expected_result": "Search bar, categories, deals, and navigation elements are visible."
-    },
-    {
-        "test_name": "Search Functionality",
-        "description": "Verify the search bar functionality.",
+        "test_name": "Home Page Navigation",
+        "description": "Verify navigation to Home page after successful login (mocked).",
         "steps": [
             {
                 "action": "sendKeys",
-                "target": "TEXT:Search essentials, groceries and more...",
-                "value": "test search"
+                "target": "TEXT:Email",
+                "value": "test@example.com"
+            },
+            {
+                "action": "sendKeys",
+                "target": "TEXT:Password",
+                "value": "password"
+            },
+            {
+                "action": "click",
+                "target": "TEXT:Login now"
             }
         ],
-        "expected_result": "Search results or suggestions are displayed based on the entered text."
+        "expected_result": "Home page is displayed with expected elements (e.g., Search bar, categories, product listings)."
     },
     {
-        "test_name": "Category Navigation",
-        "description": "Verify navigation through different categories.",
+        "test_name": "Carousel Navigation",
+        "description": "Verify carousel navigation on Home page.",
         "steps": [
             {
                 "action": "click",
-                "target": "TEXT:Groceries"
+                "target": "FRAME:Arrow - Right 3"
             }
         ],
-        "expected_result": "Products or subcategories related to Groceries are displayed."
+        "expected_result": "Carousel slides to the next item."
     },
     {
-        "test_name": "CSS Rendering - Login Button Color",
-        "description": "Verify the color of the Login Now button.",
+        "test_name": "Product Card Visibility",
+        "description": "Verify product cards are displayed on Home page.",
         "steps": [],
-        "expected_result": "Login Now button displays the correct color as per design specifications (e.g., #FF0000)."
+        "expected_result": "Product cards with images, titles, and prices are visible."
     },
     {
-        "test_name": "Responsive Design - Mobile View",
-        "description": "Verify responsiveness on mobile view.",
+        "test_name": "Search Bar Functionality",
+        "description": "Verify search bar input and placeholder text.",
         "steps": [
             {
-                "action": "resizeWindow",
-                "target": "375x812"
+                "action": "sendKeys",
+                "target": "FRAME:Search",
+                "value": "test search"
             }
         ],
-        "expected_result": "UI elements adapt correctly to the mobile screen size without overlapping or display issues."
+        "expected_result": "Search input field updates with the entered text.  Placeholder text disappears on input."
+    },
+    {
+        "test_name": "Category Navigation",
+        "description": "Verify navigation to a product category.",
+        "steps": [
+            {
+                "action": "click",
+                "target": "TEXT:Electronics"
+            }
+        ],
+        "expected_result": "Page navigates to the Electronics category or displays relevant filtering."
     }
 ]
