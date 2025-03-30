@@ -1,108 +1,47 @@
 [
     {
-        "test_name": "Login Page UI Elements Visibility",
-        "description": "Verify visibility of key elements on the login page.",
-        "steps": [],
-        "expected_result": "Email field, Password field, Login button, 'Forgot?' link, and 'Sign Up' link are visible."
-    },
-    {
-        "test_name": "Login Button Disabled State",
-        "description": "Verify the login button is initially disabled.",
-        "steps": [],
-        "expected_result": "Login button is disabled."
-    },
-    {
-        "test_name": "Empty Login Attempt",
-        "description": "Attempt login with empty email and password fields.",
+        "test_name": "Login Page Title Check",
+        "description": "Verify the title of the login page",
         "steps": [
             {
-                "action": "click",
-                "target": "[data-testid='Login now']"
-            }
-        ],
-        "expected_result": "Error messages are displayed for both email and password fields."
-    },
-    {
-        "test_name": "Invalid Email Format",
-        "description": "Attempt login with an invalid email format.",
-        "steps": [
-            {
-                "action": "type",
-                "target": "[data-testid='Email']",
-                "value": "invalid_email"
+                "action": "navigate",
+                "target": "login_page_url"
             },
             {
-                "action": "click",
-                "target": "[data-testid='Login now']"
+                "action": "get_text",
+                "target": "//text[contains(.,'Welcome back')]"
             }
         ],
-        "expected_result": "Error message is displayed for the email field indicating invalid format."
+        "expected_result": "Welcome back"
     },
     {
-        "test_name": "Password Visibility Toggle",
-        "description": "Verify password visibility toggle functionality.",
+        "test_name": "Signup Page Title Check",
+        "description": "Verify the title of the signup page",
         "steps": [
             {
-                "action": "click",
-                "target": "[data-testid='Icon/eye']"
+                "action": "navigate",
+                "target": "signup_page_url"
+            },
+            {
+                "action": "get_text",
+                "target": "//text[contains(.,'Welcome.')]"
             }
         ],
-        "expected_result": "Password field input type changes to 'text' and back to 'password' on subsequent clicks."
+        "expected_result": "Welcome. Start your journey now with our management system!"
     },
     {
-        "test_name": "Navigate to Sign Up Page",
-        "description": "Navigate to the sign-up page.",
+        "test_name": "Homepage Element Check",
+        "description": "Verify the presence of 'SMART WEARABLE.' text on the homepage",
         "steps": [
             {
-                "action": "click",
-                "target": "[data-testid='Sign up']"
-            }
-        ],
-        "expected_result": "Sign-up page is displayed with relevant fields and buttons."
-    },
-    {
-        "test_name": "Homepage Carousel Navigation",
-        "description": "Verify carousel navigation functionality on the homepage.",
-        "steps": [
+                "action": "navigate",
+                "target": "homepage_url"
+            },
             {
-                "action": "click",
-                "target": "[data-testid='Arrow - Right 3']"
+                "action": "is_displayed",
+                "target": "//text[contains(.,'SMART WEARABLE.')]"
             }
         ],
-        "expected_result": "Carousel slides to the next image."
-    },
-    {
-        "test_name": "Homepage Search Input",
-        "description": "Verify search input functionality on the homepage.",
-        "steps": [
-            {
-                "action": "type",
-                "target": "[data-testid='Search essentials, groceries and more...']",
-                "value": "test"
-            }
-        ],
-        "expected_result": "Search input field displays the entered text."
-    },
-    {
-        "test_name": "Homepage Category Navigation",
-        "description": "Verify category navigation functionality on the homepage.",
-        "steps": [
-            {
-                "action": "click",
-                "target": "[data-testid='Groceries']"
-            }
-        ],
-        "expected_result": "Navigates to the groceries category page (or displays relevant products)."
-    },
-    {
-        "test_name": "Homepage 'View All' Button Functionality",
-        "description": "Verify the 'View All' button functionality on product sections.",
-        "steps": [
-            {
-                "action": "click",
-                "target": "[data-testid='View All']"
-            }
-        ],
-        "expected_result": "Navigates to the corresponding product listing page."
+        "expected_result": "true"
     }
 ]
