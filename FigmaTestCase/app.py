@@ -14,14 +14,14 @@ os.makedirs(DATA_DIR, exist_ok=True)
 TEST_CASES_FILE = os.path.join(DATA_DIR, "test_cases.json")
 
 # Streamlit UI
-st.set_page_config(page_title="Figma TestCaseGPT 🧪", page_icon="📜")
+st.set_page_config(page_title="Figma Frontend TestCaseGPT 🧪", page_icon="📜")
 
 # Sidebar
 with st.sidebar:
-    st.title("📌 Figma TestCaseGPT 🧪")
+    st.title("📌 Figma Frontend TestCaseGPT 🧪")
     st.markdown("### **🔍 Features**")
     st.markdown("- Fetch **Figma JSON** from API 📝")
-    st.markdown("- Generate & Save **Selenium Test Cases** ⚡")
+    st.markdown("- Generate & Save **Frontend Selenium Test Cases** ⚡")
     st.markdown("---")
     st.subheader("⚙️ **Settings**")
     dark_mode = st.checkbox("🌙 Enable Dark Mode")
@@ -30,8 +30,8 @@ with st.sidebar:
     st.caption("📌 Version: 1.0.0")
 
 # User Inputs
-st.title("Figma TestCaseGPT 🧪")
-st.caption("Enter a Figma File URL to generate Selenium test cases!")
+st.title("Figma Frontend TestCaseGPT 🧪")
+st.caption("Enter a Figma File URL to generate frontend Selenium test cases!")
 
 figma_url = st.text_input("Enter Figma File URL:")
 figma_token = st.text_input("Enter Figma API Token:", type="password")
@@ -76,11 +76,19 @@ def extract_ui_elements(figma_data):
 chat_model = ChatGoogleGenerativeAI(model="gemini-1.5-pro", google_api_key=GEMINI_API_KEY)
 memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
 
-# Generate Selenium test cases
+# Generate Frontend Selenium test cases
 def generate_test_cases(ui_elements):
     prompt = f"""
-    Generate structured Selenium test cases based on the following UI elements:
+    Generate structured **frontend Selenium test cases** based on the following UI elements:
     {', '.join(ui_elements)}
+    
+    The test cases should be very very simple and easy and cover **only frontend aspects**, including:
+    - UI validation (button visibility, text fields, images, navigation, responsiveness)
+    - Form validation (empty fields, incorrect formats, required fields)
+    - CSS rendering issues (colors, fonts, alignment)
+    - Page interactions (clicks, navigation, modal pop-ups)
+
+    Exclude any backend-related tests like authentication, database checks, or API responses.
 
     Respond **only** with a valid JSON array, formatted like this:
 
@@ -102,8 +110,7 @@ def generate_test_cases(ui_elements):
     Do not include explanations, markdown formatting, or extra text outside the JSON array.
     """
 
-
-    st.info("Generating test cases...")
+    st.info("Generating frontend test cases...")
 
     try:
         response = chat_model.invoke(prompt)
@@ -140,7 +147,7 @@ def save_test_cases(test_cases):
         return False
 
 # Main Process
-if st.button("Generate Test Cases"):
+if st.button("Generate Frontend Test Cases"):
     if figma_url and figma_token:
         figma_data = get_figma_json(figma_url, figma_token)
 
@@ -157,16 +164,16 @@ if st.button("Generate Test Cases"):
                         st.success(f"✅ Test cases saved in `{TEST_CASES_FILE}`!")
 
                     # Display test cases
-                    st.write("### Generated Selenium Test Cases:")
+                    st.write("### Generated Frontend Selenium Test Cases:")
                     for tc in test_cases:
                         st.write(f"**{tc['test_name']}**")
                         st.write(f"🔹 {tc['description']}")
 
                     # Download button
                     st.download_button(
-                        label="Download Test Cases JSON",
+                        label="Download Frontend Test Cases JSON",
                         data=json.dumps(test_cases, indent=4),
-                        file_name="selenium_test_cases.json",
+                        file_name="frontend_selenium_test_cases.json",
                         mime="application/json"
                     )
     else:

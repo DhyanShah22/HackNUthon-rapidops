@@ -1,0 +1,106 @@
+[
+    {
+        "test_name": "Login Form Visibility",
+        "description": "Verify login form elements are visible.",
+        "steps": [],
+        "expected_result": "Email, Password, Login now button, and Sign Up link are displayed."
+    },
+    {
+        "test_name": "Empty Login Attempt",
+        "description": "Attempt login with empty email and password.",
+        "steps": [
+            {
+                "action": "click",
+                "target": "TEXT:Login now"
+            }
+        ],
+        "expected_result": "Error message or validation highlighting empty fields."
+    },
+    {
+        "test_name": "Invalid Email Format",
+        "description": "Attempt login with invalid email format.",
+        "steps": [
+            {
+                "action": "sendKeys",
+                "target": "TEXT:Email",
+                "value": "invalid_email"
+            },
+            {
+                "action": "sendKeys",
+                "target": "TEXT:Password",
+                "value": "password"
+            },
+            {
+                "action": "click",
+                "target": "TEXT:Login now"
+            }
+        ],
+        "expected_result": "Error message indicating invalid email format."
+    },
+    {
+        "test_name": "Sign Up Link Navigation",
+        "description": "Verify navigation to Sign Up page.",
+        "steps": [
+            {
+                "action": "click",
+                "target": "TEXT:Sign up"
+            }
+        ],
+        "expected_result": "Sign Up page elements are displayed."
+    },
+    {
+        "test_name": "Homepage Carousel Visibility",
+        "description": "Verify homepage carousel is visible and elements are rendered correctly.",
+        "steps": [],
+        "expected_result": "Carousel images and navigation arrows are displayed."
+    },
+    {
+        "test_name": "Product Card Visibility",
+        "description": "Verify product cards are visible and information is displayed correctly.",
+        "steps": [],
+        "expected_result": "Product images, names, prices, and discount information are displayed."
+    },
+    {
+        "test_name": "Search Input Functionality",
+        "description": "Verify search input accepts text.",
+        "steps": [
+            {
+                "action": "sendKeys",
+                "target": "TEXT:Search essentials, groceries and more...",
+                "value": "test search"
+            }
+        ],
+        "expected_result": "Search input displays entered text."
+    },
+    {
+        "test_name": "Navigation Menu Functionality",
+        "description": "Verify navigation menu items are clickable.",
+        "steps": [
+            {
+                "action": "click",
+                "target": "TEXT:Groceries"
+            }
+        ],
+        "expected_result": "Navigation to the corresponding category page or display of subcategories."
+    },
+    {
+        "test_name": "Logo Visibility",
+        "description": "Verify logo is visible and correctly rendered.",
+        "steps": [],
+        "expected_result": "Logo image and text 'BALA .' are displayed."
+    },
+    {
+        "test_name": "Responsive Design - Mobile",
+        "description": "Verify responsive design on mobile viewport.",
+        "steps": [
+            {
+                "action": "setViewportSize",
+                "value": {
+                    "width": 375,
+                    "height": 812
+                }
+            }
+        ],
+        "expected_result": "UI elements adapt to mobile screen size and are displayed correctly."
+    }
+]
