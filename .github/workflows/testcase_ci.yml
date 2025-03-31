@@ -1,3 +1,4 @@
+
 name: TestCase Generation & Automation
 
 on:
@@ -7,6 +8,9 @@ on:
       - "FigmaTestCase/data/test_cases.json"
   workflow_dispatch:  # Allow manual trigger
 
+permissions:
+  contents: write
+  
 jobs:
   run-api-tests:
     runs-on: ubuntu-latest
