@@ -9,4 +9,4 @@ Selenium-test/app.py ....                                                [100%]
 --------------------------------- JSON report ----------------------------------
 report saved to: logs/ui_report.json
 - Generated html report: file:///home/runner/work/HackNUthon-rapidops/HackNUthon-rapidops/logs/ui_report.html -
-============================== 4 passed in 5.59s ===============================
+============================== 4 passed in 26.91s ==============================
