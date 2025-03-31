@@ -1,46 +1,62 @@
 [
     {
         "test_name": "Login Page Title Check",
-        "description": "Verify the title of the login page is present.",
+        "description": "Verify the title of the login page.",
         "steps": [
             {
-                "action": "locate",
-                "element": "TEXT - Welcome back"
+                "action": "navigate",
+                "target": "login_page_url"
+            },
+            {
+                "action": "find",
+                "target": "TEXT - Welcome back"
             }
         ],
         "expected_result": "Text 'Welcome back' is displayed on the login page."
     },
     {
         "test_name": "Signup Page Title Check",
-        "description": "Verify the title of the signup page is present.",
+        "description": "Verify the title of the signup page.",
         "steps": [
             {
-                "action": "locate",
-                "element": "TEXT - Welcome. Start your journey now with our management system!"
+                "action": "navigate",
+                "target": "signup_page_url"
+            },
+            {
+                "action": "find",
+                "target": "TEXT - Welcome. Start your journey now with our management system!"
             }
         ],
         "expected_result": "Text 'Welcome. Start your journey now with our management system!' is displayed on the signup page."
     },
     {
-        "test_name": "Home Page Title Check",
-        "description": "Verify the home page title is present.",
+        "test_name": "Homepage Element Check",
+        "description": "Verify the presence of the search bar on the home page.",
         "steps": [
             {
-                "action": "locate",
-                "element": "TEXT - SMART WEARABLE."
+                "action": "navigate",
+                "target": "home_page_url"
+            },
+            {
+                "action": "find",
+                "target": "FRAME - Search"
             }
         ],
-        "expected_result": "Text 'SMART WEARABLE.' is displayed on the home page."
+        "expected_result": "The search bar is displayed on the home page."
     },
     {
-        "test_name": "Login Button Exists",
-        "description": "Check if the login button is present on the login page.",
+        "test_name": "Login Button Check",
+        "description": "Verify the presence of the login button on the login page.",
         "steps": [
             {
-                "action": "locate",
-                "element": "TEXT - Login now"
+                "action": "navigate",
+                "target": "login_page_url"
+            },
+            {
+                "action": "find",
+                "target": "TEXT - Login now"
             }
         ],
-        "expected_result": "The login button is displayed on the login page."
+        "expected_result": "The 'Login now' button is displayed on the login page."
     }
 ]
