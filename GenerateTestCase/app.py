@@ -10,16 +10,28 @@ from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmb
 from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationBufferMemory
 
-# API Key
+# Set Streamlit page config at the very top (only once)
+st.set_page_config(page_title="TestCaseGPT 🧪🤖", page_icon="📜")
+
+with st.sidebar:
+    st.title("🛠️ Test Log Analyzer")
+    st.markdown("### **🚀 Features**")
+    st.markdown("- Upload a **API Documentation** 🐜")
+    st.markdown("- Get **Automated Generated TestCases** ❌💪")
+    st.markdown("- Receive **Test Cases in JSON** 🛠️")
+    st.markdown("---")
+    st.info("Developed by **Syntax Error**", icon="💡")
+    st.caption("Version: 2.1.0")
+
+# Load environment variables
 load_dotenv()
-GEMINI_API_KEY = "AIzaSyDqJ7A5NQoA22lIMw7n4ic9U5l5F3I5cBg"
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+
 # GitHub Configuration
 GITHUB_USERNAME = os.getenv("GITHUB_USERNAME")
 GITHUB_REPO = os.getenv("GITHUB_REPO")
 PAT_TOKEN = os.getenv("PAT_TOKEN")
 FILE_PATH_IN_REPO = os.getenv("FILE_PATH_IN_REPO")
-# Streamlit configuration
-st.set_page_config(page_title="TestCaseGPT 🧪🤖", page_icon="📜")
 
 st.title("TestCaseGPT 🧪🤖")
 st.caption("Upload an API documentation PDF to generate structured test cases!")

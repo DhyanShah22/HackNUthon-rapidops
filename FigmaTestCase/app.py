@@ -25,7 +25,7 @@ os.makedirs(DATA_DIR, exist_ok=True)
 TEST_CASES_FILE = os.path.join(DATA_DIR, "test_cases.json")
 
 # Streamlit UI
-st.set_page_config(page_title="Figma Frontend TestCaseGPT 🧪", page_icon="📜")
+st.set_page_config(page_title="Figma TestCaseGPT 🧪", page_icon="📜")
 
 # Sidebar
 with st.sidebar:

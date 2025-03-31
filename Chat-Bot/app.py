@@ -20,7 +20,7 @@ with st.sidebar:
     st.markdown("- Get **test failure analysis** ❌💪")
     st.markdown("- Receive **fix recommendations** 🛠️")
     st.markdown("---")
-    st.info("Developed by **Dhyan Shah**", icon="💡")
+    st.info("Developed by **Syntax Error**", icon="💡")
     st.caption("Version: 2.1.0")
 
 # API Key Validation
