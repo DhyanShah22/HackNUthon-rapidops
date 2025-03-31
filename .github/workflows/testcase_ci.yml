@@ -104,4 +104,4 @@ jobs:
           git config --global user.email "github-actions@github.com"
           git add logs/*.txt
           git commit -m "📜 Updated test logs [CI/CD]" || echo "No changes to commit"
-          git push https://$GH_PAT@github.com/DhyanShah22/HackNUthon-rapidops.git main
+          git push https://x-access-token:${GH_PAT}@github.com/DhyanShah22/HackNUthon-rapidops.git main
