@@ -4,8 +4,11 @@
         "description": "Verify the login page title is visible.",
         "steps": [
             {
-                "action": "locate",
-                "locator": "//text[contains(.,'Welcome back')]"
+                "action": "find_element",
+                "locator": {
+                    "type": "text",
+                    "value": "Welcome back"
+                }
             }
         ],
         "expected_result": "Text 'Welcome back' is displayed on the login page."
@@ -15,32 +18,41 @@
         "description": "Verify the signup page title is visible.",
         "steps": [
             {
-                "action": "locate",
-                "locator": "//text[contains(.,'Welcome. Start your journey now with our management system!')]"
+                "action": "find_element",
+                "locator": {
+                    "type": "text",
+                    "value": "Welcome. Start your journey now with our management system!"
+                }
             }
         ],
         "expected_result": "Text 'Welcome. Start your journey now with our management system!' is displayed on the signup page."
     },
     {
-        "test_name": "Home Page Logo Check",
-        "description": "Verify the MegaMart logo is visible on the home page.",
+        "test_name": "Homepage Element Check",
+        "description": "Verify the homepage element 'SMART WEARABLE.' is visible.",
         "steps": [
             {
-                "action": "locate",
-                "locator": "//vector[@name='MegaMart']"
+                "action": "find_element",
+                "locator": {
+                    "type": "text",
+                    "value": "SMART WEARABLE."
+                }
             }
         ],
-        "expected_result": "The MegaMart logo vector is displayed on the home page."
+        "expected_result": "Text 'SMART WEARABLE.' is displayed on the home page."
     },
     {
-        "test_name": "Home Page Search Bar Check",
-        "description": "Verify the search bar placeholder text is visible.",
+        "test_name": "Login Button Check",
+        "description": "Verify the login button exists on the login page.",
         "steps": [
             {
-                "action": "locate",
-                "locator": "//text[contains(.,'Search essentials, groceries and more...')]"
+                "action": "find_element",
+                "locator": {
+                    "type": "text",
+                    "value": "Login now"
+                }
             }
         ],
-        "expected_result": "The placeholder text 'Search essentials, groceries and more...' is displayed in the search bar."
+        "expected_result": "Button with text 'Login now' is present on the login page."
     }
 ]
