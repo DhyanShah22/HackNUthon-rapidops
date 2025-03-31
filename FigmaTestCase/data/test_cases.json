@@ -1,0 +1,51 @@
+[
+    {
+        "test_name": "Login Frame Visibility",
+        "description": "Verify the login frame is displayed.",
+        "steps": [
+            {
+                "action": "locate",
+                "element": "FRAME - Log In"
+            }
+        ],
+        "expected_result": "Login frame is visible."
+    },
+    {
+        "test_name": "Signup Frame Visibility",
+        "description": "Verify the signup frame is displayed.",
+        "steps": [
+            {
+                "action": "locate",
+                "element": "FRAME - Sign Up"
+            }
+        ],
+        "expected_result": "Signup frame is visible."
+    },
+    {
+        "test_name": "Homepage Visibility",
+        "description": "Verify the homepage is displayed.",
+        "steps": [
+            {
+                "action": "locate",
+                "element": "FRAME - Home Page"
+            }
+        ],
+        "expected_result": "Homepage is visible."
+    },
+    {
+        "test_name": "Login Button Clickable",
+        "description": "Verify the login button on the login frame is clickable.",
+        "steps": [
+            {
+                "action": "locate",
+                "element": "FRAME - Log In"
+            },
+            {
+                "action": "locate",
+                "element": "INSTANCE - Button",
+                "identifier": "Login now"
+            }
+        ],
+        "expected_result": "Login button is located and clickable."
+    }
+]
