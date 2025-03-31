@@ -1,0 +1,47 @@
+[
+    {
+        "test_name": "Login Page Title Check",
+        "description": "Verify the title of the login page",
+        "steps": [
+            {
+                "action": "navigate",
+                "target": "login_page_url"
+            },
+            {
+                "action": "get_text",
+                "target": "//text[contains(., 'Welcome back')]"
+            }
+        ],
+        "expected_result": "Welcome back"
+    },
+    {
+        "test_name": "Sign Up Page Title Check",
+        "description": "Verify the title of the sign-up page",
+        "steps": [
+            {
+                "action": "navigate",
+                "target": "signup_page_url"
+            },
+            {
+                "action": "get_text",
+                "target": "//text[contains(., 'Welcome.')]"
+            }
+        ],
+        "expected_result": "Welcome. Start your journey now with our management system!"
+    },
+    {
+        "test_name": "Home Page Title Check",
+        "description": "Verify the presence of a home page element",
+        "steps": [
+            {
+                "action": "navigate",
+                "target": "home_page_url"
+            },
+            {
+                "action": "is_displayed",
+                "target": "//text[contains(., 'SMART WEARABLE.')]"
+            }
+        ],
+        "expected_result": "true"
+    }
+]
