@@ -2,11 +2,13 @@ import os
 import json
 import requests
 import subprocess
+from dotenv import load_dotenv
 import re
 import streamlit as st
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.memory import ConversationBufferMemory
 
+load_dotenv()
 # API Key (Replace with your actual Gemini API key)
 GEMINI_API_KEY = "AIzaSyDqJ7A5NQoA22lIMw7n4ic9U5l5F3I5cBg"
 
