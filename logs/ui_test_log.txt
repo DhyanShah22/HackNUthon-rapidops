@@ -1,12 +1,1 @@
-============================= test session starts ==============================
-platform linux -- Python 3.9.21, pytest-8.3.5, pluggy-1.5.0
-rootdir: /home/runner/work/HackNUthon-rapidops/HackNUthon-rapidops
-plugins: metadata-3.1.1, langsmith-0.3.19, html-4.1.1, json-report-1.5.0, anyio-4.9.0
-collected 4 items
-
-Selenium-test/app.py ....                                                [100%]
-
---------------------------------- JSON report ----------------------------------
-report saved to: logs/ui_report.json
-- Generated html report: file:///home/runner/work/HackNUthon-rapidops/HackNUthon-rapidops/logs/ui_report.html -
-============================== 4 passed in 4.28s ===============================
+⚠️ No UI test cases found, skipping UI tests.
