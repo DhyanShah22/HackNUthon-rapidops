@@ -1,0 +1,62 @@
+[
+    {
+        "test_name": "Login Page Title Check",
+        "description": "Verify the title of the login page is visible.",
+        "steps": [
+            {
+                "action": "find_element",
+                "locator": {
+                    "type": "xpath",
+                    "value": "//div[contains(text(),'Welcome back')]"
+                },
+                "value": ""
+            }
+        ],
+        "expected_result": "Title 'Welcome back' is displayed on the login page."
+    },
+    {
+        "test_name": "Signup Page Title Check",
+        "description": "Verify the title of the signup page is visible.",
+        "steps": [
+            {
+                "action": "find_element",
+                "locator": {
+                    "type": "xpath",
+                    "value": "//div[contains(text(),'Welcome. Start your journey now')]"
+                },
+                "value": ""
+            }
+        ],
+        "expected_result": "Title 'Welcome. Start your journey now' is displayed on the signup page."
+    },
+    {
+        "test_name": "Homepage Title Check",
+        "description": "Verify the presence of the homepage title.",
+        "steps": [
+            {
+                "action": "find_element",
+                "locator": {
+                    "type": "xpath",
+                    "value": "//div[contains(text(),'SMART WEARABLE.')]"
+                },
+                "value": ""
+            }
+        ],
+        "expected_result": "Title 'SMART WEARABLE.' is displayed on the homepage."
+    },
+    {
+        "test_name": "Login Button Exists",
+        "description": "Verify the login button is present on the login page.",
+        "steps": [
+            {
+                "action": "find_element",
+                "locator": {
+                    "type": "xpath",
+                    "value": "//div[contains(text(),'Login now')]"
+                },
+                "value": ""
+            }
+        ],
+        "expected_result": "Login button with text 'Login now' is displayed on the login page."
+    }
+]
