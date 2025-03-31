@@ -1,0 +1,46 @@
+[
+    {
+        "test_name": "Login Page Title Check",
+        "description": "Verify the login page title is visible.",
+        "steps": [
+            {
+                "action": "locate",
+                "locator": "//text[contains(.,'Welcome back')]"
+            }
+        ],
+        "expected_result": "Text 'Welcome back' is displayed on the login page."
+    },
+    {
+        "test_name": "Signup Page Title Check",
+        "description": "Verify the signup page title is visible.",
+        "steps": [
+            {
+                "action": "locate",
+                "locator": "//text[contains(.,'Welcome. Start your journey now with our management system!')]"
+            }
+        ],
+        "expected_result": "Text 'Welcome. Start your journey now with our management system!' is displayed on the signup page."
+    },
+    {
+        "test_name": "Home Page Logo Check",
+        "description": "Verify the MegaMart logo is visible on the home page.",
+        "steps": [
+            {
+                "action": "locate",
+                "locator": "//vector[@name='MegaMart']"
+            }
+        ],
+        "expected_result": "The MegaMart logo vector is displayed on the home page."
+    },
+    {
+        "test_name": "Home Page Search Bar Check",
+        "description": "Verify the search bar placeholder text is visible.",
+        "steps": [
+            {
+                "action": "locate",
+                "locator": "//text[contains(.,'Search essentials, groceries and more...')]"
+            }
+        ],
+        "expected_result": "The placeholder text 'Search essentials, groceries and more...' is displayed in the search bar."
+    }
+]
