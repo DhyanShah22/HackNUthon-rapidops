@@ -17,8 +17,8 @@
 ## 📸 Screenshots
 
 <p float="left">
-  <img src="/home/Dhyan/Documents/Hack/InspectRa/1.jpeg" width="400"/>
-  <img src="/home/Dhyan/Documents/Hack/InspectRa/4.jpeg" width="400"/>
+  <img src="/InspectRa/1.jpeg" width="400"/>
+  <img src="/InspectRa/4.jpeg" width="400"/>
 </p>
 
 ---
